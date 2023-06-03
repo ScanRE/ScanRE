@@ -17,7 +17,7 @@ const Home = ({ scanResData, scanError }) => {
     return (
         <div>
             <div className="p-4 mx-6">
-                <div className="tabs tabs-boxed font-bold flex gap-4">
+                <div className="p-4 tabs tabs-boxed font-bold flex items-center gap-4">
                     <a
                         className={`tab ${activeTab === "Overview" ? "tab-active text-base" : ""}`}
                         onClick={() => handleTabClick("Overview")}

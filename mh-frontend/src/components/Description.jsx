@@ -22,7 +22,7 @@ const Description = () => {
     return (
         <div className="relative p-4 border rounded-lg shadow mb-5 shadow-sm border-gray-500">
             <div className="flex items-center mb-2">
-                <h2 className="text-lg font-semibold bg-primary text-white py-1 px-2 rounded">Description</h2>
+                <h2 className="text-lg font-semibold bg-primary text-white py-1 px-6 rounded">Description</h2>
             </div>
             {isEditing ? (
                 <textarea

@@ -56,7 +56,7 @@ const DoughnutChart = ({ scanResData }) => {
     return (
         <div className="border border-gray-500 shadow-xl rounded-lg p-4 w-full mr-4">
             <div className="flex items-center mb-2">
-                <h2 className="text-lg font-semibold bg-primary text-white py-1 px-2 rounded">Risk chart</h2>
+                <h2 className="text-lg font-semibold bg-primary text-white py-1 px-6 rounded">Risk chart</h2>
             </div>
             <div className="w-[50%] mx-auto">
                 <Doughnut data={chartData} options={options} />
