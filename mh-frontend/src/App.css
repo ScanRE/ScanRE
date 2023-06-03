@@ -1,0 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Poppins', sans-serif;
+    background: radial-gradient(78.43% 107.43% at 4.61% 5.65%, #E1E1E1 0%, #FAFAFA 100%); 
+}
