@@ -118,10 +118,7 @@ const Findings = () => {
 	return (
 		<div>
 			<Table columns={columns} data={data}
-				summary={() => (
-					<Table.Summary fixed={'top'}>
-					</Table.Summary>
-				)}
+				sticky={true}
 			/>
 		</div>
 	);
