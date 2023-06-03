@@ -38,3 +38,13 @@
   position: sticky;
   top: 0;
 }
+
+.table-href {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.table-href:hover {
+  color: #767676;
+}

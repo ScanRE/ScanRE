@@ -19,6 +19,7 @@ const Findings = () => {
 		dataIndex: 'name',
 		key: 'name',
 		width: 200,
+		render: (e) => <a className="table-href" href={`/FindingDetail`}>{e}</a>
 	},
 	{
 		title: 'CWE',
