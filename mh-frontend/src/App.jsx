@@ -1,13 +1,15 @@
 import './App.css'
+import Landing from './containers/Landing'
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
-  )
+      <>
+          <Routes>
+              <Route path="/" element={<Landing />}></Route>
+          </Routes>
+      </>
+  );
 }
 
 export default App
