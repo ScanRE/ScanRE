@@ -1,14 +1,25 @@
 import React from "react";
+import Info from "../Info";
+import InfoTitle from "../InfoTitle";
 
 const FileLocation = () => {
-	return (
-		<div className="p-4 rounded-lg shadow border border-white my-3">
-			<p className="text-gray-600">File Location:</p>
-			<p className="text-lg font-semibold">/path/to/file</p>
-			<p className="text-gray-600">Line Number:</p>
-			<p className="text-lg font-semibold">123</p>
-		</div>
-	);
+    return (
+        <>
+            <div className="p-4 rounded-lg shadow border border-gray-400 mt-3">
+            <InfoTitle title={"File Location"} />
+                <div className="flex items-center justify-evenly mt-3">
+                    <div>
+                        <p className="text-gray-900 inline">File Location:</p>
+                        <Info title={"C:UsershpDesktopmumHacksmh-frontendsrccomponentsFindingDetailStatsSection.jsx"} className={"underline underline-offset-1"}/>
+                    </div>
+                    <div>
+                        <p className="text-gray-900 inline">Line Number:</p>
+                        <Info title={"123"} />
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default FileLocation;

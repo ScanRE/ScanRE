@@ -1,53 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./landing.css";
 import { Navbar, CTA } from "./../../components";
 import { useNavigate } from "react-router-dom";
 
-const Landing = () => {
-	let navigate = useNavigate();
+import axios from "axios";
 
-	const handleSubmit = () => {
-		// API CALL
-		// set loader state: true
-		// res
-		// set global state for results
-		// set loader state: false
-		navigate("/home");
-	};
+const Landing = ({ setScanResData, setScanError }) => {
+    let navigate = useNavigate();
 
-	return (
-		<div className="landing">
-			<Navbar />
-			<section className="first">
-				<div className="title-tagline">
-					<h1 className="gradient-text">Upload. Scan. Analyze.</h1>
-					<h2 className="tagline">
-						A static code analysis toolkit to scan vulnerabilities
-						blazing fast.
-					</h2>
-				</div>
+    const handleSubmit = async () => {
+        await axios
+            .get(`http://127.0.0.1:5000/`)
+            .then((res) => {
+                setScanResData(res);
+            })
+            .catch((err) => {
+                setScanError(err);
+            });
 
-				<div className="title-input">
-					<span className="instruct">
-						Just paste your GitHub/Gitlab repository link.
-					</span>
+        navigate("/home");
+    };
 
-					<div className="input-repo">
-						<label htmlFor="name"></label>
-						<input
-							placeholder="https://github.com/<username>/<repo-name>"
-							type="text"
-							id="repo-link"
-							name="repo-link"
-							required
-						/>
-					</div>
-				</div>
+    return (
+        <div className="landing">
+            <Navbar />
+            <section className="first">
+                <div className="title-tagline">
+                    <h1 className="gradient-text">Upload. Scan. Analyze.</h1>
+                    <h2 className="tagline">A static code analysis toolkit to scan vulnerabilities blazing fast.</h2>
+                </div>
 
-				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
-			</section>
-		</div>
-	);
+                <div className="title-input">
+                    <span className="instruct">Just paste your GitHub/Gitlab repository link.</span>
+
+                    <div className="input-repo">
+                        <label htmlFor="name"></label>
+                        <input
+                            placeholder="https://github.com/<username>/<repo-name>"
+                            type="text"
+                            id="repo-link"
+                            name="repo-link"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <CTA text="Start Ananlyzing" onClick={handleSubmit} />
+            </section>
+        </div>
+    );
 };
 
 export default Landing;
