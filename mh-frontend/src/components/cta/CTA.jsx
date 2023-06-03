@@ -1,8 +1,9 @@
 import React from 'react';
+import './cta.css';
 
-function CTA({text, onClick, href='/'}) {
-    return ( 
-        <button onClick={onClick}>
+function CTA({text, onClick}) {
+    return (
+        <button className="btn" onClick={onClick}>
             {text}
         </button>
      );
