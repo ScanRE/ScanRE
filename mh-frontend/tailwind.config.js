@@ -8,4 +8,14 @@ export default {
         extend: {},
     },
     plugins: [daisyui],
+    daisyui: {
+        themes: [
+            {
+                mytheme: {
+                    primary: "#1C1C1C",
+                    secondary: "#f6d860",
+                },
+            },
+        ],
+    },
 };

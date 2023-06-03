@@ -1,0 +1,2272 @@
+{
+    "errors": [
+        {
+            "code": 3,
+            "level": "warn",
+            "message": "Syntax error at line Command Injection/CVE-2019-16663.php:63:\n `` was unexpected",
+            "path": "Command Injection/CVE-2019-16663.php",
+            "type": "Syntax error"
+        }
+    ],
+    "paths": {
+        "scanned": [
+            "Authentication Bypass/CVE-2019-1937",
+            "Buffer Overflow/bof1.c",
+            "Buffer Overflow/example1.c",
+            "Buffer Overflow/example2.c",
+            "Buffer Overflow/gets.c",
+            "Buffer Overflow/netkit-telnet 0.17.c",
+            "Buffer Overflow/sprintf.c",
+            "Buffer Overflow/strcpy.c",
+            "Code Execution/Discourse_SNS_webhook_RCE.rb",
+            "Command Injection/CVE-2019-16662.php",
+            "Command Injection/CVE-2019-16663.php",
+            "Command Injection/Cryptolog.php",
+            "Command Injection/OSI.cs",
+            "Command Injection/cmd1.php",
+            "Command Injection/cmd2.php",
+            "Command Injection/cmd3.php",
+            "Command Injection/cmd4.php",
+            "Command Injection/cmd5.php",
+            "Command Injection/cmd6.php",
+            "Command Injection/exec.js",
+            "Command Injection/tainted.py",
+            "Denial Of Service/dos.js",
+            "Denial Of Service/example1.aspx.cs",
+            "Denial Of Service/example2.c",
+            "README.md",
+            "SQL Injection/Cryptolog,php",
+            "SQL Injection/SQLi.cs",
+            "SQL Injection/blindsqli.php",
+            "SQL Injection/example.java",
+            "SQL Injection/example1.rb",
+            "SQL Injection/example2.js",
+            "SQL Injection/mysql.js",
+            "SQL Injection/sql.js",
+            "SQL Injection/sqli.php",
+            "SSRF/express.js",
+            "XSS/Cookie Security/sc.cs",
+            "XSS/Cookie Security/sc2.cs",
+            "XSS/Spring.java",
+            "XSS/XSS.cs",
+            "XSS/dom.php",
+            "XSS/example.php",
+            "XSS/example1.html",
+            "XSS/express.js"
+        ],
+        "skipped": [
+            { "path": "Command Injection/CVE-2019-16663.php", "reason": "analysis_failed_parser_or_internal_error" }
+        ]
+    },
+    "results": [
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 39, "line": 12, "offset": 536 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "df76a8f43dab9e152e90dcaff19fdddf1666dbdbc6ecc725767e8d1d407282f3ef0f2e1abe19bee22a2775133ce327885a440c7657cfe9a8b75900b28ff85c86_0",
+                "is_ignored": false,
+                "lines": "exec($rootTestCmd1, $cmdOutput, $err);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "exec",
+                        "end": { "col": 5, "line": 12, "offset": 502 },
+                        "start": { "col": 1, "line": 12, "offset": 498 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/CVE-2019-16662.php",
+            "start": { "col": 1, "line": 12, "offset": 498 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 39, "line": 21, "offset": 1042 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "df76a8f43dab9e152e90dcaff19fdddf1666dbdbc6ecc725767e8d1d407282f3ef0f2e1abe19bee22a2775133ce327885a440c7657cfe9a8b75900b28ff85c86_1",
+                "is_ignored": false,
+                "lines": "exec($rootTestCmd2, $cmdOutput, $err);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "exec",
+                        "end": { "col": 5, "line": 21, "offset": 1008 },
+                        "start": { "col": 1, "line": 21, "offset": 1004 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/CVE-2019-16662.php",
+            "start": { "col": 1, "line": 21, "offset": 1004 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 87, "line": 36, "offset": 1070 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "36a452a33a20ae129f432395a172c4e62f4a51ab71258ccdad9d9208ce9ccc56d99abf7c2bd5b3e8962c8393e5b53bb6f279ba7ba9c5b2ed4518f12d0e32d359_0",
+                "is_ignored": false,
+                "lines": "  $output = shell_exec('sudo /opt/cryptolog/scripts/testmountpoint.sh '.$sharefolder);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "shell_exec",
+                        "end": { "col": 23, "line": 36, "offset": 1006 },
+                        "start": { "col": 13, "line": 36, "offset": 996 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/Cryptolog.php",
+            "start": { "col": 3, "line": 36, "offset": 986 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 26, "line": 13, "offset": 336 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "36923dd475465f1a601182fbfeead90d9e5574e226ec61f733fb2a656f10a4d68b7d482fd27f2170259bb120df4b9f53474b6776de488300855b958b3273fef6_0",
+                "is_ignored": false,
+                "lines": "    system($_GET[\"cmd\"]);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 11, "line": 13, "offset": 321 },
+                        "start": { "col": 5, "line": 13, "offset": 315 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd1.php",
+            "start": { "col": 5, "line": 13, "offset": 315 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 27, "line": 10, "offset": 339 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "3761581c494b907c4d29cce5e2848528d0e9fb47ec43fdb01e376c229b70d05d21f48a7541f444367c662218eaa4b4727da0e983246451b928678d061418bc53_0",
+                "is_ignored": false,
+                "lines": "    system($_POST[\"cmd\"]);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 11, "line": 10, "offset": 323 },
+                        "start": { "col": 5, "line": 10, "offset": 317 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd2.php",
+            "start": { "col": 5, "line": 10, "offset": 317 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 49, "line": 14, "offset": 391 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "b4bf800cba4c72c0ed5524da1639e63d056bf819c3eb3d7509253e89126dcef11693b001ada353d4e310682f2fe4613e146304923d2c2238d7dbcf24eb6887c6_0",
+                "is_ignored": false,
+                "lines": "    system(\"/usr/bin/whois \" . $_GET[\"domain\"]);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 11, "line": 14, "offset": 353 },
+                        "start": { "col": 5, "line": 14, "offset": 347 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd3.php",
+            "start": { "col": 5, "line": 14, "offset": 347 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 41, "line": 11, "offset": 378 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "f512b61831f1fd68f16811540f168f418672ac547016bf3bdd371d7587c288bee4ddebb6d9526a5e1ce24596d40b1723f452daa4f5f82e29e1d6053a7331c9db_0",
+                "is_ignored": false,
+                "lines": "    system(\"whois \" . $_POST[\"domain\"]);",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 11, "line": 11, "offset": 348 },
+                        "start": { "col": 5, "line": 11, "offset": 342 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd4.php",
+            "start": { "col": 5, "line": 11, "offset": 342 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 73, "line": 13, "offset": 1003 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "63b938fa1095b288b92a51447aea0d907dc9139c596252157c16a6255278ae0e4680717a1493627c4d6027959f93bfe28f3d3af42909405dbb60bc968434d689_0",
+                "is_ignored": false,
+                "lines": "        { system(\"whois -h \" . $_GET[\"server\"] . \" \" . $_GET[\"domain\"]); }",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 17, "line": 13, "offset": 947 },
+                        "start": { "col": 11, "line": 13, "offset": 941 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd5.php",
+            "start": { "col": 11, "line": 13, "offset": 941 }
+        },
+        {
+            "check_id": "php.lang.security.exec-use.exec-use",
+            "end": { "col": 75, "line": 13, "offset": 1007 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "add635e54ace467d93e93441739c6c22d5052bed196b10b70042983e0472765e7a4cca3c7b03fc25b595ac5c5c595dc1dc19e67abd3c50a9322ff49108124094_0",
+                "is_ignored": false,
+                "lines": "        { system(\"whois -h \" . $_POST[\"server\"] . \" \" . $_POST[\"domain\"]); }",
+                "message": "Executing non-constant commands. This can lead to command injection.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": [
+                        "https://github.com/FloeDesignTechnologies/phpcs-security-audit/blob/master/Security/Sniffs/BadFunctions/SystemExecFunctionsSniff.php"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUjye",
+                            "url": "https://semgrep.dev/playground/r/qkT9eG/php.lang.security.exec-use.exec-use",
+                            "version_id": "qkT9eG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5Q1j",
+                    "source": "https://semgrep.dev/r/php.lang.security.exec-use.exec-use",
+                    "subcategory": ["audit"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "system",
+                        "end": { "col": 17, "line": 13, "offset": 949 },
+                        "start": { "col": 11, "line": 13, "offset": 943 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/cmd6.php",
+            "start": { "col": 11, "line": 13, "offset": 943 }
+        },
+        {
+            "check_id": "python.django.security.injection.command.command-injection-os-system.command-injection-os-system",
+            "end": { "col": 35, "line": 9, "offset": 233 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "104be95570fddf06624c9c52988272537fd638309eb83fb13586d3cb77a9b78cde1bb2f0348f8cf5fa09f35fecc740329817b537a147c019293d51e8311baff3_0",
+                "is_ignored": false,
+                "lines": "    os.system(request.remote_addr)",
+                "message": "Request data detected in os.system. This could be vulnerable to a command injection and should be avoided. If this must be done, use the 'subprocess' module instead and pass the arguments as a list. See https://owasp.org/www-community/attacks/Command_Injection for more information.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/Command_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "KxUbp2",
+                            "url": "https://semgrep.dev/playground/r/8KTLd4/python.django.security.injection.command.command-injection-os-system.command-injection-os-system",
+                            "version_id": "8KTLd4"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Gen2",
+                    "source": "https://semgrep.dev/r/python.django.security.injection.command.command-injection-os-system.command-injection-os-system",
+                    "subcategory": ["vuln"],
+                    "technology": ["django"]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "test_sources_7",
+                        "end": { "col": 19, "line": 7, "offset": 181 },
+                        "start": { "col": 5, "line": 7, "offset": 167 }
+                    },
+                    "$W": {
+                        "abstract_content": "remote_addr",
+                        "end": { "col": 34, "line": 9, "offset": 232 },
+                        "start": { "col": 23, "line": 9, "offset": 221 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/tainted.py",
+            "start": { "col": 5, "line": 9, "offset": 203 }
+        },
+        {
+            "check_id": "python.flask.security.injection.os-system-injection.os-system-injection",
+            "end": { "col": 35, "line": 9, "offset": 233 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "f330f534a3a5eb70ff4957f15145026f7eda2c69928602b48a5a2cd80c0c0e0d0b634bbcf19ce95a7cab206b536eaf047010cf11dced42390f87cb0326c3286e_0",
+                "is_ignored": false,
+                "lines": "    os.system(request.remote_addr)",
+                "message": "User data detected in os.system. This could be vulnerable to a command injection and should be avoided. If this must be done, use the 'subprocess' module instead and pass the arguments as a list.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/Command_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "BYUN99",
+                            "url": "https://semgrep.dev/playground/r/yeTd6w/python.flask.security.injection.os-system-injection.os-system-injection",
+                            "version_id": "yeTd6w"
+                        }
+                    },
+                    "shortlink": "https://sg.run/4xzz",
+                    "source": "https://semgrep.dev/r/python.flask.security.injection.os-system-injection.os-system-injection",
+                    "subcategory": ["audit"],
+                    "technology": ["flask"]
+                },
+                "metavars": {
+                    "$W": {
+                        "abstract_content": "remote_addr",
+                        "end": { "col": 34, "line": 9, "offset": 232 },
+                        "start": { "col": 23, "line": 9, "offset": 221 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/tainted.py",
+            "start": { "col": 5, "line": 9, "offset": 203 }
+        },
+        {
+            "check_id": "problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+            "end": { "col": 15, "line": 5, "offset": 96 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "3570513844fd4ba58411a3c1f14e8c9e21f612e95f60d834931a9d70fa438e7a706e8bbb406094368c7b3a22793926debfafad019fcb45d667db695f6f74357e_0",
+                "is_ignored": false,
+                "lines": "var req = http.request(options, function(res)",
+                "message": "Checks for any usage of http servers instead of https servers. Encourages the usage of https protocol instead of http, which does not have TLS and is therefore unencrypted. Using http can lead to man-in-the-middle attacks in which the attacker is able to read sensitive information.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A02:2021 - Cryptographic Failures", "A03:2017 - Sensitive Data Exposure"],
+                    "references": [
+                        "https://nodejs.org/api/http.html#http_class_http_agent",
+                        "https://groups.google.com/g/rubyonrails-security/c/NCCsca7TEtY"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "7KUQAE",
+                            "url": "https://semgrep.dev/playground/r/0bTk8o/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                            "version_id": "0bTk8o"
+                        }
+                    },
+                    "shortlink": "https://sg.run/x1zL",
+                    "source": "https://semgrep.dev/r/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                    "subcategory": ["audit"],
+                    "technology": ["node.js"],
+                    "vulnerability": "Insecure Transport"
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "request",
+                        "end": { "col": 23, "line": 5, "offset": 104 },
+                        "start": { "col": 16, "line": 5, "offset": 97 }
+                    },
+                    "$HTTP": {
+                        "abstract_content": "http",
+                        "end": { "col": 15, "line": 5, "offset": 96 },
+                        "start": { "col": 11, "line": 5, "offset": 92 }
+                    }
+                },
+                "severity": "WARNING"
+            },
+            "path": "SQL Injection/example2.js",
+            "start": { "col": 11, "line": 5, "offset": 92 }
+        },
+        {
+            "check_id": "javascript.express.security.injection.raw-html-format.raw-html-format",
+            "end": { "col": 34, "line": 6, "offset": 174 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "name",
+                            "location": {
+                                "end": { "col": 17, "line": 5, "offset": 124 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 13, "line": 5, "offset": 120 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 34, "line": 6, "offset": 174 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 14, "line": 6, "offset": 154 }
+                            },
+                            "'<h1> Hello :'+ name"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 32, "line": 5, "offset": 139 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 23, "line": 5, "offset": 130 }
+                            },
+                            "req.query"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "836f9a74c2334b67b511b4795c4d749cf2a14b960f46d0327df12773ea07b381e5677c02a3c091627df1523f574c7f3f36b95a0e8d6f16a65f5533e6fcdda23e_0",
+                "is_ignored": false,
+                "lines": "    res.send('<h1> Hello :'+ name +\"</h1>\")",
+                "message": "User data flows into the host portion of this manually-constructed HTML. This can introduce a Cross-Site-Scripting (XSS) vulnerability if this comes from user-provided input. Consider using a sanitization library such as DOMPurify to sanitize the HTML within.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "5rUL0X",
+                            "url": "https://semgrep.dev/playground/r/qkTw3R/javascript.express.security.injection.raw-html-format.raw-html-format",
+                            "version_id": "qkTw3R"
+                        }
+                    },
+                    "shortlink": "https://sg.run/5DO3",
+                    "source": "https://semgrep.dev/r/javascript.express.security.injection.raw-html-format.raw-html-format",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "router",
+                        "end": { "col": 7, "line": 4, "offset": 74 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express.Router()",
+                            "svalue_end": { "col": 32, "line": 2, "offset": 66 },
+                            "svalue_start": { "col": 16, "line": 2, "offset": 50 }
+                        },
+                        "start": { "col": 1, "line": 4, "offset": 68 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "name",
+                        "end": { "col": 34, "line": 6, "offset": 174 },
+                        "start": { "col": 30, "line": 6, "offset": 170 }
+                    },
+                    "$HTMLSTR": {
+                        "abstract_content": "<h1> Hello :",
+                        "end": { "col": 27, "line": 6, "offset": 167 },
+                        "start": { "col": 15, "line": 6, "offset": 155 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": { "col": 11, "line": 4, "offset": 78 },
+                        "start": { "col": 8, "line": 4, "offset": 75 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 26, "line": 5, "offset": 133 },
+                        "start": { "col": 23, "line": 5, "offset": 130 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 34, "line": 4, "offset": 101 },
+                        "start": { "col": 31, "line": 4, "offset": 98 }
+                    },
+                    "$TAG": {
+                        "abstract_content": "h1",
+                        "end": { "col": 18, "line": 6, "offset": 158 },
+                        "start": { "col": 16, "line": 6, "offset": 156 }
+                    }
+                },
+                "severity": "WARNING"
+            },
+            "path": "XSS/express.js",
+            "start": { "col": 14, "line": 6, "offset": 154 }
+        },
+        {
+            "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 85, "line": 17, "offset": 578 },
+            "extra": {
+                "dataflow_trace": {
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 85, "line": 17, "offset": 578 },
+                                "path": "SQL Injection/blindsqli.php",
+                                "start": { "col": 29, "line": 17, "offset": 522 }
+                            },
+                            "'select count(*) from secrets where id = ' . $_GET['id']"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 79, "line": 17, "offset": 572 },
+                                "path": "SQL Injection/blindsqli.php",
+                                "start": { "col": 74, "line": 17, "offset": 567 }
+                            },
+                            "$_GET"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "b10d0427b9f93afb42ca45e9dee790aedfd90dd2ff9d3c3ed5b02c559daaf9106fd83a4495f93252732f3d86f66fed3cfcb1af83d56589b4b9bedde5878753ee_0",
+                "is_ignored": false,
+                "lines": "  $count = $db->querySingle('select count(*) from secrets where id = ' . $_GET['id']);",
+                "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUXdL",
+                            "url": "https://semgrep.dev/playground/r/pZTqxD/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "pZTqxD"
+                        }
+                    },
+                    "shortlink": "https://sg.run/lZYG",
+                    "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "select",
+                        "end": { "col": 36, "line": 17, "offset": 529 },
+                        "start": { "col": 30, "line": 17, "offset": 523 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "$_GET['id']",
+                        "end": { "col": 85, "line": 17, "offset": 578 },
+                        "start": { "col": 74, "line": 17, "offset": 567 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/blindsqli.php",
+            "start": { "col": 29, "line": 17, "offset": 522 }
+        },
+        {
+            "check_id": "php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 85, "line": 17, "offset": 578 },
+            "extra": {
+                "dataflow_trace": {
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 85, "line": 17, "offset": 578 },
+                                "path": "SQL Injection/sqli.php",
+                                "start": { "col": 29, "line": 17, "offset": 522 }
+                            },
+                            "'select count(*) from secrets where id = ' . $_GET['id']"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 79, "line": 17, "offset": 572 },
+                                "path": "SQL Injection/sqli.php",
+                                "start": { "col": 74, "line": 17, "offset": 567 }
+                            },
+                            "$_GET"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "7fff3d3350a364cc62737658f8b2b45712eeec55dae7e65c10f715cecdd6e27801ca6cfa1fb75cad7c15b54fe2ab1b63a710688cd6f1db6ea3b52b1a588c6171_0",
+                "is_ignored": false,
+                "lines": "  $count = $db->querySingle('select count(*) from secrets where id = ' . $_GET['id']);",
+                "message": "User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`$mysqli->prepare(\"INSERT INTO test(id, label) VALUES (?, ?)\");`) or a safe library.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "qNUXdL",
+                            "url": "https://semgrep.dev/playground/r/pZTqxD/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "pZTqxD"
+                        }
+                    },
+                    "shortlink": "https://sg.run/lZYG",
+                    "source": "https://semgrep.dev/r/php.lang.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["php"]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "select",
+                        "end": { "col": 36, "line": 17, "offset": 529 },
+                        "start": { "col": 30, "line": 17, "offset": 523 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "$_GET['id']",
+                        "end": { "col": 85, "line": 17, "offset": 578 },
+                        "start": { "col": 74, "line": 17, "offset": 567 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/sqli.php",
+            "start": { "col": 29, "line": 17, "offset": 522 }
+        },
+        {
+            "check_id": "ruby.rails.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 53, "line": 7, "offset": 247 },
+            "extra": {
+                "dataflow_trace": {
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 53, "line": 7, "offset": 247 },
+                                "path": "SQL Injection/example1.rb",
+                                "start": { "col": 40, "line": 7, "offset": 234 }
+                            },
+                            "params[:name]"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 46, "line": 7, "offset": 240 },
+                                "path": "SQL Injection/example1.rb",
+                                "start": { "col": 40, "line": 7, "offset": 234 }
+                            },
+                            "params"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "8792216961ffb750c36d4de67eb0dd52de08acdeb4e3b629c2143523e3f859f639342b819fee9f5c3526962be268a196d2a9877a28e9ecc182e96d7467313f57_0",
+                "is_ignored": false,
+                "lines": "con.query 'UPDATE users set name = ' + params[:name] +",
+                "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as ActiveRecord which will protect your queries.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": ["https://rorsecurity.info/portfolio/ruby-on-rails-sql-injection-cheat-sheet"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "bwU8gl",
+                            "url": "https://semgrep.dev/playground/r/K3TPRl/ruby.rails.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "K3TPRl"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Y85o",
+                    "source": "https://semgrep.dev/r/ruby.rails.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["rails"]
+                },
+                "metavars": {
+                    "$EXPR": {
+                        "abstract_content": "params[[[:name]",
+                        "end": { "col": 53, "line": 7, "offset": 247 },
+                        "start": { "col": 40, "line": 7, "offset": 234 }
+                    },
+                    "$SQLSTR": {
+                        "abstract_content": "UPDATE users set name = ",
+                        "end": { "col": 36, "line": 7, "offset": 230 },
+                        "start": { "col": 12, "line": 7, "offset": 206 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/example1.rb",
+            "start": { "col": 40, "line": 7, "offset": 234 }
+        },
+        {
+            "check_id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 55, "line": 19, "offset": 537 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "userId",
+                            "location": {
+                                "end": { "col": 15, "line": 17, "offset": 447 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 9, "line": 17, "offset": 441 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 55, "line": 19, "offset": 537 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 49, "line": 19, "offset": 531 }
+                            },
+                            "userId"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 28, "line": 17, "offset": 460 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 18, "line": 17, "offset": 450 }
+                            },
+                            "req.params"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "e2bbe024cd2a6938a600b20118de90a44d6c6898b4fd766d0abc66dd6dcd750e1e4c58171cc1a6aaf0642d9cd702e08f4bd290edfc23495fd0cd08c57a2fad6f_0",
+                "is_ignored": false,
+                "lines": "        sql : \"SELECT * FROM users WHERE id=\" + userId",
+                "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "NbUNpr",
+                            "url": "https://semgrep.dev/playground/r/BjTOyR/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "BjTOyR"
+                        }
+                    },
+                    "shortlink": "https://sg.run/66ZL",
+                    "source": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "router",
+                        "end": { "col": 7, "line": 16, "offset": 391 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express.Router()",
+                            "svalue_end": { "col": 32, "line": 2, "offset": 67 },
+                            "svalue_start": { "col": 16, "line": 2, "offset": 51 }
+                        },
+                        "start": { "col": 1, "line": 16, "offset": 385 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "userId",
+                        "end": { "col": 55, "line": 19, "offset": 537 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "req.params.id",
+                            "svalue_end": { "col": 31, "line": 17, "offset": 463 },
+                            "svalue_start": { "col": 18, "line": 17, "offset": 450 }
+                        },
+                        "start": { "col": 49, "line": 19, "offset": 531 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": { "col": 11, "line": 16, "offset": 395 },
+                        "start": { "col": 8, "line": 16, "offset": 392 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 21, "line": 17, "offset": 453 },
+                        "start": { "col": 18, "line": 17, "offset": 450 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 42, "line": 16, "offset": 426 },
+                        "start": { "col": 39, "line": 16, "offset": 423 }
+                    },
+                    "$SQLSTR": {
+                        "abstract_content": "SELECT * FROM users WHERE id=",
+                        "end": { "col": 45, "line": 19, "offset": 527 },
+                        "start": { "col": 16, "line": 19, "offset": 498 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/mysql.js",
+            "start": { "col": 49, "line": 19, "offset": 531 }
+        },
+        {
+            "check_id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 62, "line": 28, "offset": 770 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "userId",
+                            "location": {
+                                "end": { "col": 15, "line": 27, "offset": 691 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 9, "line": 27, "offset": 685 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 62, "line": 28, "offset": 770 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 56, "line": 28, "offset": 764 }
+                            },
+                            "userId"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 28, "line": 27, "offset": 704 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 18, "line": 27, "offset": 694 }
+                            },
+                            "req.params"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "e2bbe024cd2a6938a600b20118de90a44d6c6898b4fd766d0abc66dd6dcd750e1e4c58171cc1a6aaf0642d9cd702e08f4bd290edfc23495fd0cd08c57a2fad6f_1",
+                "is_ignored": false,
+                "lines": "    connection.query(\"SELECT * FROM users WHERE id=\" + userId,(err, result) => {",
+                "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "NbUNpr",
+                            "url": "https://semgrep.dev/playground/r/BjTOyR/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "BjTOyR"
+                        }
+                    },
+                    "shortlink": "https://sg.run/66ZL",
+                    "source": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "router",
+                        "end": { "col": 7, "line": 26, "offset": 634 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express.Router()",
+                            "svalue_end": { "col": 32, "line": 2, "offset": 67 },
+                            "svalue_start": { "col": 16, "line": 2, "offset": 51 }
+                        },
+                        "start": { "col": 1, "line": 26, "offset": 628 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "userId",
+                        "end": { "col": 62, "line": 28, "offset": 770 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "req.params.id",
+                            "svalue_end": { "col": 31, "line": 27, "offset": 707 },
+                            "svalue_start": { "col": 18, "line": 27, "offset": 694 }
+                        },
+                        "start": { "col": 56, "line": 28, "offset": 764 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": { "col": 11, "line": 26, "offset": 638 },
+                        "start": { "col": 8, "line": 26, "offset": 635 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 21, "line": 27, "offset": 697 },
+                        "start": { "col": 18, "line": 27, "offset": 694 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 43, "line": 26, "offset": 670 },
+                        "start": { "col": 40, "line": 26, "offset": 667 }
+                    },
+                    "$SQLSTR": {
+                        "abstract_content": "SELECT * FROM users WHERE id=",
+                        "end": { "col": 52, "line": 28, "offset": 760 },
+                        "start": { "col": 23, "line": 28, "offset": 731 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/mysql.js",
+            "start": { "col": 56, "line": 28, "offset": 764 }
+        },
+        {
+            "check_id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 54, "line": 36, "offset": 985 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "userId",
+                            "location": {
+                                "end": { "col": 15, "line": 34, "offset": 891 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 9, "line": 34, "offset": 885 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 54, "line": 36, "offset": 985 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 48, "line": 36, "offset": 979 }
+                            },
+                            "userId"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 28, "line": 34, "offset": 904 },
+                                "path": "SQL Injection/mysql.js",
+                                "start": { "col": 18, "line": 34, "offset": 894 }
+                            },
+                            "req.params"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "e2bbe024cd2a6938a600b20118de90a44d6c6898b4fd766d0abc66dd6dcd750e1e4c58171cc1a6aaf0642d9cd702e08f4bd290edfc23495fd0cd08c57a2fad6f_2",
+                "is_ignored": false,
+                "lines": "        sql : \"SELECT * FROM users WHERE id=\" +userId",
+                "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "NbUNpr",
+                            "url": "https://semgrep.dev/playground/r/BjTOyR/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "BjTOyR"
+                        }
+                    },
+                    "shortlink": "https://sg.run/66ZL",
+                    "source": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "router",
+                        "end": { "col": 7, "line": 33, "offset": 834 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express.Router()",
+                            "svalue_end": { "col": 32, "line": 2, "offset": 67 },
+                            "svalue_start": { "col": 16, "line": 2, "offset": 51 }
+                        },
+                        "start": { "col": 1, "line": 33, "offset": 828 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "userId",
+                        "end": { "col": 54, "line": 36, "offset": 985 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "req.params.id",
+                            "svalue_end": { "col": 31, "line": 34, "offset": 907 },
+                            "svalue_start": { "col": 18, "line": 34, "offset": 894 }
+                        },
+                        "start": { "col": 48, "line": 36, "offset": 979 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": { "col": 11, "line": 33, "offset": 838 },
+                        "start": { "col": 8, "line": 33, "offset": 835 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 21, "line": 34, "offset": 897 },
+                        "start": { "col": 18, "line": 34, "offset": 894 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 43, "line": 33, "offset": 870 },
+                        "start": { "col": 40, "line": 33, "offset": 867 }
+                    },
+                    "$SQLSTR": {
+                        "abstract_content": "SELECT * FROM users WHERE id=",
+                        "end": { "col": 45, "line": 36, "offset": 976 },
+                        "start": { "col": 16, "line": 36, "offset": 947 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/mysql.js",
+            "start": { "col": 48, "line": 36, "offset": 979 }
+        },
+        {
+            "check_id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+            "end": { "col": 83, "line": 11, "offset": 348 },
+            "extra": {
+                "dataflow_trace": {
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 83, "line": 11, "offset": 348 },
+                                "path": "SQL Injection/sql.js",
+                                "start": { "col": 66, "line": 11, "offset": 331 }
+                            },
+                            "req.body.username"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 74, "line": 11, "offset": 339 },
+                                "path": "SQL Injection/sql.js",
+                                "start": { "col": 66, "line": 11, "offset": 331 }
+                            },
+                            "req.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "54193fa7e28877b6dfb8745bb3605f695a80962414561b0866562f85d852e806d4ba57e061680f461f30e209561a0511682e7eba0094eae6da314ad90935253d_0",
+                "is_ignored": false,
+                "lines": "    sequelize.query('SELECT * FROM Products WHERE name LIKE ' +  req.body.username);",
+                "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/SQL_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "NbUNpr",
+                            "url": "https://semgrep.dev/playground/r/BjTOyR/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                            "version_id": "BjTOyR"
+                        }
+                    },
+                    "shortlink": "https://sg.run/66ZL",
+                    "source": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": { "col": 4, "line": 10, "offset": 228 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express()",
+                            "svalue_end": { "col": 20, "line": 3, "offset": 53 },
+                            "svalue_start": { "col": 11, "line": 3, "offset": 44 }
+                        },
+                        "start": { "col": 1, "line": 10, "offset": 225 }
+                    },
+                    "$EXPR": {
+                        "abstract_content": "req.body.username",
+                        "end": { "col": 83, "line": 11, "offset": 348 },
+                        "start": { "col": 66, "line": 11, "offset": 331 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "post",
+                        "end": { "col": 9, "line": 10, "offset": 233 },
+                        "start": { "col": 5, "line": 10, "offset": 229 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 69, "line": 11, "offset": 334 },
+                        "start": { "col": 66, "line": 11, "offset": 331 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 38, "line": 10, "offset": 262 },
+                        "start": { "col": 35, "line": 10, "offset": 259 }
+                    },
+                    "$SQLSTR": {
+                        "abstract_content": "SELECT * FROM Products WHERE name LIKE ",
+                        "end": { "col": 61, "line": 11, "offset": 326 },
+                        "start": { "col": 22, "line": 11, "offset": 287 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/sql.js",
+            "start": { "col": 66, "line": 11, "offset": 331 }
+        },
+        {
+            "check_id": "csharp.lang.security.sqli.csharp-sqli.csharp-sqli",
+            "end": { "col": 102, "line": 25, "offset": 616 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e9815f8d8a5ca94cc4d6607f27cfb1cbca8f4bd7b9ab7c67160e46c81d5478b71d693bf9a16b6f00cf7d88a7e5219a469858303b10b919aeca2ee5873e35ca29_0",
+                "is_ignored": false,
+                "lines": "            using (SqlCommand cmd = new SqlCommand(\"SELECT * FROM users WHERE userId = '\" + id + \"'\"))",
+                "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements instead. You can obtain a PreparedStatement using 'SqlCommand' and 'SqlParameter'.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "x8UxeP",
+                            "url": "https://semgrep.dev/playground/r/e1TEqj/csharp.lang.security.sqli.csharp-sqli.csharp-sqli",
+                            "version_id": "e1TEqj"
+                        }
+                    },
+                    "shortlink": "https://sg.run/d2Xd",
+                    "source": "https://semgrep.dev/r/csharp.lang.security.sqli.csharp-sqli.csharp-sqli",
+                    "subcategory": ["audit"],
+                    "technology": ["csharp"]
+                },
+                "metavars": {
+                    "$PATTERN": {
+                        "abstract_content": "SqlCommand",
+                        "end": { "col": 51, "line": 25, "offset": 565 },
+                        "start": { "col": 41, "line": 25, "offset": 555 }
+                    },
+                    "$S": {
+                        "abstract_content": "cmd",
+                        "end": { "col": 34, "line": 25, "offset": 548 },
+                        "start": { "col": 31, "line": 25, "offset": 545 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/SQLi.cs",
+            "start": { "col": 20, "line": 25, "offset": 534 }
+        },
+        {
+            "check_id": "c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+            "end": { "col": 19, "line": 5, "offset": 103 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "44e06495d7398e6e38bf258865a3ceaa877f46d939d097af25714e2929273b67dc7c2bc81d04603b8e10f36002029220b7f4cf9cb4d7ad82025598208044c5a0_0",
+                "is_ignored": false,
+                "lines": "\tscanf(\"%s\", name);",
+                "message": "Avoid using 'scanf()'. This function, when used improperly, does not consider buffer boundaries and can lead to buffer overflows. Use 'fgets()' instead for reading input.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-676: Use of Potentially Dangerous Function"],
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "references": ["http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "AbUzPd",
+                            "url": "https://semgrep.dev/playground/r/nWTwv8/c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+                            "version_id": "nWTwv8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/nd1g",
+                    "source": "https://semgrep.dev/r/c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+                    "subcategory": ["audit"],
+                    "technology": ["c"]
+                },
+                "metavars": {},
+                "severity": "WARNING"
+            },
+            "path": "Buffer Overflow/example1.c",
+            "start": { "col": 2, "line": 5, "offset": 86 }
+        },
+        {
+            "check_id": "c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+            "end": { "col": 19, "line": 5, "offset": 103 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "b752546e7fbdbf98c1f26172a62c9359b87b32b01e2c315bb0fa9b084b4dc8590b884be80f64425837091739304628172ce5fb9fb4bec95720b4dd8252f3558a_0",
+                "is_ignored": false,
+                "lines": "\tscanf(\"%s\", name);",
+                "message": "Avoid using 'scanf()'. This function, when used improperly, does not consider buffer boundaries and can lead to buffer overflows. Use 'fgets()' instead for reading input.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-676: Use of Potentially Dangerous Function"],
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "references": ["http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "AbUzPd",
+                            "url": "https://semgrep.dev/playground/r/nWTwv8/c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+                            "version_id": "nWTwv8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/nd1g",
+                    "source": "https://semgrep.dev/r/c.lang.security.insecure-use-scanf-fn.insecure-use-scanf-fn",
+                    "subcategory": ["audit"],
+                    "technology": ["c"]
+                },
+                "metavars": {},
+                "severity": "WARNING"
+            },
+            "path": "Buffer Overflow/example2.c",
+            "start": { "col": 2, "line": 5, "offset": 86 }
+        },
+        {
+            "check_id": "c.lang.security.insecure-use-gets-fn.insecure-use-gets-fn",
+            "end": { "col": 19, "line": 6, "offset": 151 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "006bb078ff233a3f945de185273e9e82488f36b7ba70e1c4a2506d54d2bb1981bcc0ae8d57ba118acba7bc878d957f5f7d18b313d16def7c4a2da770507c3fff_0",
+                "is_ignored": false,
+                "lines": "    gets(username); // user inputs \"malicious\"",
+                "message": "Avoid 'gets()'. This function does not consider buffer boundaries and can lead to buffer overflows. Use 'fgets()' or 'gets_s()' instead.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": ["CWE-676: Use of Potentially Dangerous Function"],
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "references": ["https://us-cert.cisa.gov/bsi/articles/knowledge/coding-practices/fgets-and-gets_s"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "GdU7OE",
+                            "url": "https://semgrep.dev/playground/r/5PTB64/c.lang.security.insecure-use-gets-fn.insecure-use-gets-fn",
+                            "version_id": "5PTB64"
+                        }
+                    },
+                    "shortlink": "https://sg.run/dKqX",
+                    "source": "https://semgrep.dev/r/c.lang.security.insecure-use-gets-fn.insecure-use-gets-fn",
+                    "subcategory": ["audit"],
+                    "technology": ["c"]
+                },
+                "metavars": {},
+                "severity": "ERROR"
+            },
+            "path": "Buffer Overflow/gets.c",
+            "start": { "col": 5, "line": 6, "offset": 137 }
+        },
+        {
+            "check_id": "ruby.lang.security.dangerous-open.dangerous-open",
+            "end": { "col": 26, "line": 18, "offset": 523 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "f99dcf1428d912597e09f8156267ba5e9da7b1c8451719f65f09929befd9e8d51229fc5d0d3c031c7c1fd220e58676d371a2c51fb70b0c2d01c2796c3f4fd404_0",
+                "is_ignored": false,
+                "lines": "      open(subscribe_url)",
+                "message": "Detected non-static command inside 'open'. Audit the input to 'open'. If unverified user data can reach this call site, this is a code injection vulnerability. A malicious actor can inject a malicious script to execute arbitrary code.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-94: Improper Control of Generation of Code ('Code Injection')"],
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A03:2021 - Injection"],
+                    "references": ["https://owasp.org/Top10/A03_2021-Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "0oUEyd",
+                            "url": "https://semgrep.dev/playground/r/X0ToJq/ruby.lang.security.dangerous-open.dangerous-open",
+                            "version_id": "X0ToJq"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Al8Q",
+                    "source": "https://semgrep.dev/r/ruby.lang.security.dangerous-open.dangerous-open",
+                    "subcategory": ["audit"],
+                    "technology": ["ruby"]
+                },
+                "metavars": {
+                    "$CMD": {
+                        "abstract_content": "subscribe_url",
+                        "end": { "col": 25, "line": 18, "offset": 522 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "json[[[\"SubscribeURL\"].presence",
+                            "svalue_end": { "col": 66, "line": 12, "offset": 352 },
+                            "svalue_start": { "col": 37, "line": 12, "offset": 323 }
+                        },
+                        "start": { "col": 12, "line": 18, "offset": 509 }
+                    }
+                },
+                "severity": "WARNING"
+            },
+            "path": "Code Execution/Discourse_SNS_webhook_RCE.rb",
+            "start": { "col": 7, "line": 18, "offset": 504 }
+        },
+        {
+            "check_id": "javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+            "end": { "col": 83, "line": 11, "offset": 348 },
+            "extra": {
+                "dataflow_trace": {
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 83, "line": 11, "offset": 348 },
+                                "path": "SQL Injection/sql.js",
+                                "start": { "col": 21, "line": 11, "offset": 286 }
+                            },
+                            "'SELECT * FROM Products WHERE name LIKE ' +  req.body.username"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 74, "line": 11, "offset": 339 },
+                                "path": "SQL Injection/sql.js",
+                                "start": { "col": 66, "line": 11, "offset": 331 }
+                            },
+                            "req.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "79b9d4146ebd2a645bd56d713120ffa8de1ea14f1006a64700bc5f7f7c2fafbd19ec74db732ff1abfb9fa1134fd95089c1169c05f4cf0b35a3c76f27151bb886_0",
+                "is_ignored": false,
+                "lines": "    sequelize.query('SELECT * FROM Products WHERE name LIKE ' +  req.body.username);",
+                "message": "Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "interfile": true,
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://sequelize.org/docs/v6/core-concepts/raw-queries/#replacements"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "yyU0GX",
+                            "url": "https://semgrep.dev/playground/r/bZT2ew/javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+                            "version_id": "bZT2ew"
+                        }
+                    },
+                    "shortlink": "https://sg.run/gjoe",
+                    "source": "https://semgrep.dev/r/javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": { "col": 4, "line": 10, "offset": 228 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express()",
+                            "svalue_end": { "col": 20, "line": 3, "offset": 53 },
+                            "svalue_start": { "col": 11, "line": 3, "offset": 44 }
+                        },
+                        "start": { "col": 1, "line": 10, "offset": 225 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "post",
+                        "end": { "col": 9, "line": 10, "offset": 233 },
+                        "start": { "col": 5, "line": 10, "offset": 229 }
+                    },
+                    "$QUERY": {
+                        "abstract_content": "'SELECT * FROM Products WHERE name LIKE '+req.body.username",
+                        "end": { "col": 83, "line": 11, "offset": 348 },
+                        "start": { "col": 21, "line": 11, "offset": 286 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 69, "line": 11, "offset": 334 },
+                        "start": { "col": 66, "line": 11, "offset": 331 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 38, "line": 10, "offset": 262 },
+                        "start": { "col": 35, "line": 10, "offset": 259 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "SQL Injection/sql.js",
+            "start": { "col": 21, "line": 11, "offset": 286 }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+            "end": { "col": 20, "line": 3, "offset": 53 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4d513afbb89e7cb8ba89ce0e12c6a7071e92f07a5e64d3ca566449e882842293c5a37fd5d35c0b91133a38ca90e3cef7b974a801691868c4c9a060f59d6cb313_0",
+                "is_ignored": false,
+                "lines": "var app = express()",
+                "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": ["CWE-352: Cross-Site Request Forgery (CSRF)"],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2021 - Broken Access Control"],
+                    "references": [
+                        "https://www.npmjs.com/package/csurf",
+                        "https://www.npmjs.com/package/csrf",
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "wdUKEq",
+                            "url": "https://semgrep.dev/playground/r/BjT3d6/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+                            "version_id": "BjT3d6"
+                        }
+                    },
+                    "shortlink": "https://sg.run/BxzR",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+                    "subcategory": ["audit"],
+                    "technology": ["javascript", "typescript", "express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": { "col": 8, "line": 3, "offset": 41 },
+                        "start": { "col": 5, "line": 3, "offset": 38 }
+                    },
+                    "$EXPRESS": {
+                        "abstract_content": "express",
+                        "end": { "col": 18, "line": 3, "offset": 51 },
+                        "start": { "col": 11, "line": 3, "offset": 44 }
+                    }
+                },
+                "severity": "INFO"
+            },
+            "path": "SQL Injection/sql.js",
+            "start": { "col": 5, "line": 3, "offset": 38 }
+        },
+        {
+            "check_id": "javascript.lang.security.detect-child-process.detect-child-process",
+            "end": { "col": 25, "line": 8, "offset": 182 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "req",
+                            "location": {
+                                "end": { "col": 26, "line": 7, "offset": 147 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 23, "line": 7, "offset": 144 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 25, "line": 8, "offset": 182 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 10, "line": 8, "offset": 167 }
+                            },
+                            "`${req.body.url"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 26, "line": 7, "offset": 147 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 23, "line": 7, "offset": 144 }
+                            },
+                            "req"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "f8e147c6e09af9a448fa3ce5aa8d0af5863a4efd21cb592ba920ed1ac24f01f465f673a2124184fb42c5e655e32687b0c97984d4192e7c9cc10b2c193ba6a0be_0",
+                "is_ignored": false,
+                "lines": "    exec(`${req.body.url}`, (error) => {",
+                "message": "Detected calls to child_process from a function argument `req`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html#do-not-use-dangerous-functions"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "10UKNB",
+                            "url": "https://semgrep.dev/playground/r/JdT9LJ/javascript.lang.security.detect-child-process.detect-child-process",
+                            "version_id": "JdT9LJ"
+                        }
+                    },
+                    "shortlink": "https://sg.run/l2lo",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.detect-child-process.detect-child-process",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-child-process.js",
+                    "subcategory": ["audit"],
+                    "technology": ["javascript"]
+                },
+                "metavars": {
+                    "$CMD": {
+                        "abstract_content": "`req.body.url",
+                        "end": { "col": 25, "line": 8, "offset": 182 },
+                        "start": { "col": 10, "line": 8, "offset": 167 }
+                    },
+                    "$FUNC": {
+                        "abstract_content": "req",
+                        "end": { "col": 26, "line": 7, "offset": 147 },
+                        "start": { "col": 23, "line": 7, "offset": 144 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/exec.js",
+            "start": { "col": 10, "line": 8, "offset": 167 }
+        },
+        {
+            "check_id": "javascript.lang.security.detect-child-process.detect-child-process",
+            "end": { "col": 38, "line": 19, "offset": 392 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "req",
+                            "location": {
+                                "end": { "col": 26, "line": 17, "offset": 334 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 23, "line": 17, "offset": 331 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 38, "line": 19, "offset": 392 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 9, "line": 19, "offset": 363 }
+                            },
+                            "'gzip ' + req.query.file_path"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 26, "line": 17, "offset": 334 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 23, "line": 17, "offset": 331 }
+                            },
+                            "req"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "2a2126cf2f779e333690fcd6e669da21e0f4e9d3862c79cb7579cb25f97877fbd3c07644a7fb462ec784980a647a5c8cee2f4d35571c1c221c574ae18c321dbe_0",
+                "is_ignored": false,
+                "lines": "        'gzip ' + req.query.file_path,",
+                "message": "Detected calls to child_process from a function argument `req`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html#do-not-use-dangerous-functions"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "10UKNB",
+                            "url": "https://semgrep.dev/playground/r/JdT9LJ/javascript.lang.security.detect-child-process.detect-child-process",
+                            "version_id": "JdT9LJ"
+                        }
+                    },
+                    "shortlink": "https://sg.run/l2lo",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.detect-child-process.detect-child-process",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-child-process.js",
+                    "subcategory": ["audit"],
+                    "technology": ["javascript"]
+                },
+                "metavars": {
+                    "$CMD": {
+                        "abstract_content": "'gzip '+req.query.file_path",
+                        "end": { "col": 38, "line": 19, "offset": 392 },
+                        "start": { "col": 9, "line": 19, "offset": 363 }
+                    },
+                    "$FUNC": {
+                        "abstract_content": "req",
+                        "end": { "col": 26, "line": 17, "offset": 334 },
+                        "start": { "col": 23, "line": 17, "offset": 331 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/exec.js",
+            "start": { "col": 9, "line": 19, "offset": 363 }
+        },
+        {
+            "check_id": "javascript.lang.security.detect-child-process.detect-child-process",
+            "end": { "col": 33, "line": 35, "offset": 709 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "cmd",
+                            "location": {
+                                "end": { "col": 19, "line": 32, "offset": 644 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 16, "line": 32, "offset": 641 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 33, "line": 35, "offset": 709 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 30, "line": 35, "offset": 706 }
+                            },
+                            "cmd"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 19, "line": 32, "offset": 644 },
+                                "path": "Command Injection/exec.js",
+                                "start": { "col": 16, "line": 32, "offset": 641 }
+                            },
+                            "cmd"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "1678219ea09e81313fb0261c5bbf6db9960e7a72cdfa32bd6d339dcf73e4dd0c6306a8a6c760d51d3df52fd6c5babd9b378741121f42e785e4a5cb809a4b04fb_0",
+                "is_ignored": false,
+                "lines": "    const cmdRunning = spawn(cmd, []);",
+                "message": "Detected calls to child_process from a function argument `cmd`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensure user input is correctly sanitized or sandboxed. ",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html#do-not-use-dangerous-functions"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "10UKNB",
+                            "url": "https://semgrep.dev/playground/r/JdT9LJ/javascript.lang.security.detect-child-process.detect-child-process",
+                            "version_id": "JdT9LJ"
+                        }
+                    },
+                    "shortlink": "https://sg.run/l2lo",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.detect-child-process.detect-child-process",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-child-process.js",
+                    "subcategory": ["audit"],
+                    "technology": ["javascript"]
+                },
+                "metavars": {
+                    "$CMD": {
+                        "abstract_content": "cmd",
+                        "end": { "col": 33, "line": 35, "offset": 709 },
+                        "start": { "col": 30, "line": 35, "offset": 706 }
+                    },
+                    "$FUNC": {
+                        "abstract_content": "cmd",
+                        "end": { "col": 19, "line": 32, "offset": 644 },
+                        "start": { "col": 16, "line": 32, "offset": 641 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/exec.js",
+            "start": { "col": 30, "line": 35, "offset": 706 }
+        },
+        {
+            "check_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+            "end": { "col": 43, "line": 6, "offset": 183 },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "name",
+                            "location": {
+                                "end": { "col": 17, "line": 5, "offset": 124 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 13, "line": 5, "offset": 120 }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 43, "line": 6, "offset": 183 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 14, "line": 6, "offset": 154 }
+                            },
+                            "'<h1> Hello :'+ name +\"</h1>\""
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": { "col": 32, "line": 5, "offset": 139 },
+                                "path": "XSS/express.js",
+                                "start": { "col": 23, "line": 5, "offset": 130 }
+                            },
+                            "req.query"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "792f2dc4f9987f40633cdd965ccf8fabe7dbead6b909504971641785cd18f1631a8510f3c77bea2a22dc872ca9cd6bc440824a391ae92540892220305bcba77f_0",
+                "is_ignored": false,
+                "lines": "    res.send('<h1> Hello :'+ name +\"</h1>\")",
+                "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "interfile": true,
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": ["A07:2017 - Cross-Site Scripting (XSS)", "A03:2021 - Injection"],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "3qUPA1",
+                            "url": "https://semgrep.dev/playground/r/d6TxQk/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+                            "version_id": "d6TxQk"
+                        }
+                    },
+                    "shortlink": "https://sg.run/vzGl",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+                    "subcategory": ["vuln"],
+                    "technology": ["express"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "router",
+                        "end": { "col": 7, "line": 4, "offset": 74 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "express.Router()",
+                            "svalue_end": { "col": 32, "line": 2, "offset": 66 },
+                            "svalue_start": { "col": 16, "line": 2, "offset": 50 }
+                        },
+                        "start": { "col": 1, "line": 4, "offset": 68 }
+                    },
+                    "$ARG": {
+                        "abstract_content": "'<h1> Hello :'+name+\"</h1>\"",
+                        "end": { "col": 43, "line": 6, "offset": 183 },
+                        "start": { "col": 14, "line": 6, "offset": 154 }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": { "col": 11, "line": 4, "offset": 78 },
+                        "start": { "col": 8, "line": 4, "offset": 75 }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": { "col": 26, "line": 5, "offset": 133 },
+                        "start": { "col": 23, "line": 5, "offset": 130 }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": { "col": 34, "line": 4, "offset": 101 },
+                        "start": { "col": 31, "line": 4, "offset": 98 }
+                    }
+                },
+                "severity": "WARNING"
+            },
+            "path": "XSS/express.js",
+            "start": { "col": 14, "line": 6, "offset": 154 }
+        },
+        {
+            "check_id": "python.flask.security.audit.debug-enabled.debug-enabled",
+            "end": { "col": 21, "line": 14, "offset": 301 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "ba4a624b7d0a3b566d4d07db9fbae2048355befa282c489211498613cba2970fc480cf04a7cfb9f7e37a2aab7f633a7a6b013487e092bd2f526c9159d85517a0_0",
+                "is_ignored": false,
+                "lines": "\tapp.run(debug=True)",
+                "message": "Detected Flask app with debug=True. Do not deploy to production with this flag enabled as it will leak sensitive information. Instead, consider using Flask configuration variables or setting 'debug' using system environment variables.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": ["CWE-489: Active Debug Code"],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": "A06:2017 - Security Misconfiguration",
+                    "references": [
+                        "https://labs.detectify.com/2015/10/02/how-patreon-got-hacked-publicly-exposed-werkzeug-debugger/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "gxU1bd",
+                            "url": "https://semgrep.dev/playground/r/qkTPK2/python.flask.security.audit.debug-enabled.debug-enabled",
+                            "version_id": "qkTPK2"
+                        }
+                    },
+                    "shortlink": "https://sg.run/dKrd",
+                    "source": "https://semgrep.dev/r/python.flask.security.audit.debug-enabled.debug-enabled",
+                    "subcategory": ["vuln"],
+                    "technology": ["flask"]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": { "col": 5, "line": 14, "offset": 285 },
+                        "propagated_value": {
+                            "svalue_abstract_content": "Flask(__name__)",
+                            "svalue_end": { "col": 22, "line": 3, "offset": 64 },
+                            "svalue_start": { "col": 7, "line": 3, "offset": 49 }
+                        },
+                        "start": { "col": 2, "line": 14, "offset": 282 }
+                    }
+                },
+                "severity": "WARNING"
+            },
+            "path": "Command Injection/tainted.py",
+            "start": { "col": 2, "line": 14, "offset": 282 }
+        },
+        {
+            "check_id": "csharp.lang.security.injections.os-command.os-command-injection",
+            "end": { "col": 23, "line": 18, "offset": 467 },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e4d72399bd861829204917333bdb98a842b4c5cb5da4c0ea735b68b05fb6d13a293065d97e5e514afa7f79cd9eb259b495ce132e93d11d40f0fb74b34c4b1d54_0",
+                "is_ignored": false,
+                "lines": "            p.Start();",
+                "message": "The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": ["A01:2017 - Injection", "A03:2021 - Injection"],
+                    "references": ["https://owasp.org/www-community/attacks/Command_Injection"],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "rule_id": "9AUOjg",
+                            "url": "https://semgrep.dev/playground/r/o5TWJ5/csharp.lang.security.injections.os-command.os-command-injection",
+                            "version_id": "o5TWJ5"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Ze6p",
+                    "source": "https://semgrep.dev/r/csharp.lang.security.injections.os-command.os-command-injection",
+                    "subcategory": ["audit"],
+                    "technology": [".net"]
+                },
+                "metavars": {
+                    "$ARG": {
+                        "abstract_content": "binFile",
+                        "end": { "col": 43, "line": 16, "offset": 372 },
+                        "start": { "col": 36, "line": 16, "offset": 365 }
+                    },
+                    "$F": {
+                        "abstract_content": "os",
+                        "end": { "col": 25, "line": 13, "offset": 264 },
+                        "start": { "col": 23, "line": 13, "offset": 262 }
+                    },
+                    "$PROC": {
+                        "abstract_content": "p",
+                        "end": { "col": 14, "line": 18, "offset": 458 },
+                        "start": { "col": 13, "line": 18, "offset": 457 }
+                    },
+                    "$T": {
+                        "abstract_content": "string",
+                        "end": { "col": 22, "line": 13, "offset": 261 },
+                        "start": { "col": 16, "line": 13, "offset": 255 }
+                    }
+                },
+                "severity": "ERROR"
+            },
+            "path": "Command Injection/OSI.cs",
+            "start": { "col": 13, "line": 18, "offset": 457 }
+        }
+    ],
+    "version": "1.20.0"
+}
