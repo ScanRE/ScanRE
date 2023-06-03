@@ -1,9 +1,9 @@
 import './App.css'
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom";
-import Landing from './containers/landing/Landing'
-import Home from './containers/Home';
-import FindingDetail from './containers/FindingDetail';
+import Landing from "./containers/landing/Landing";
+import Home from "./containers/Home";
+import FindingDetail from "./containers/FindingDetail";
 
 function App() {
     const [scanResData, setScanResData] = useState();
@@ -29,4 +29,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

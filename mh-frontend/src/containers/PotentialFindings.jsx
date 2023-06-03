@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const PotentialFindings = () => {
-  return <div>PotentialFindings</div>;
-}
+	return <div>PotentialFindings</div>;
+};
 
-export default PotentialFindings
+export default PotentialFindings;

@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const FindingsTable = () => {
-    return (
-        <div>
-            Findings Table
-        </div>
-    );
+	return <div>Findings Table</div>;
 };
 
-export default FindingsTable
+export default FindingsTable;

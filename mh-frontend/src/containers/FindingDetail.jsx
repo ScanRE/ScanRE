@@ -1,5 +1,3 @@
-import React from "react";
-
 import StatsSection from "../components/FindingDetail/StatsSection";
 import FileLocation from "../components/FindingDetail/FileLocation";
 import Message from "../components/FindingDetail/Message";

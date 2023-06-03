@@ -10,7 +10,7 @@ const FileLocation = () => {
                 <div className="flex items-center justify-evenly mt-3">
                     <div>
                         <p className="text-gray-900 inline">File Location:</p>
-                        <Info title={"C:UsershpDesktopmumHacksmh-frontendsrccomponentsFindingDetailStatsSection.jsx"} />
+                        <Info title={"C:UsershpDesktopmumHacksmh-frontendsrccomponentsFindingDetailStatsSection.jsx"} className={"underline underline-offset-1"}/>
                     </div>
                     <div>
                         <p className="text-gray-900 inline">Line Number:</p>

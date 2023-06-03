@@ -21,4 +21,4 @@ const Overview = ({ scanResData, scanError }) => {
     );
 };
 
-export default Overview
+export default Overview;

@@ -14,7 +14,7 @@ const initialChartData = {
     ],
 };
 const options = {
-    responsive: true,
+	responsive: true
 };
 
 const DoughnutChart = ({ scanResData }) => {

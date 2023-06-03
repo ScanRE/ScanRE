@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import editSVG from "../assets/edit.svg"
 
 const Description = () => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [content, setContent] = useState(
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, illum, minus elit. Sapiente, illum, minus?"
-    );
+	const [isEditing, setIsEditing] = useState(false);
+	const [content, setContent] = useState(
+		"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, illum, minus elit. Sapiente, illum, minus?"
+	);
 
-    const handleEditClick = () => {
-        setIsEditing(true);
-    };
+	const handleEditClick = () => {
+		setIsEditing(true);
+	};
 
-    const handleSaveClick = () => {
-        setIsEditing(false);
-    };
+	const handleSaveClick = () => {
+		setIsEditing(false);
+	};
 
-    const handleChange = (event) => {
-        setContent(event.target.value);
-    };
+	const handleChange = (event) => {
+		setContent(event.target.value);
+	};
 
     return (
         <div className="relative p-4 border rounded-lg shadow mb-5 shadow-sm border-gray-500">
