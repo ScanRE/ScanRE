@@ -9,9 +9,4 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: "Poppins", sans-serif;
-	background: radial-gradient(
-		78.43% 107.43% at 4.61% 5.65%,
-		#e1e1e1 0%,
-		#fafafa 100%
-	);
 }

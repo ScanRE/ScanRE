@@ -1,6 +1,11 @@
 .landing {
 	width: 100vw;
 	height: fit-content;
+	background: radial-gradient(
+		78.43% 107.43% at 4.61% 5.65%,
+		#e1e1e1 0%,
+		#fafafa 100%
+	);
 }
 
 section {
