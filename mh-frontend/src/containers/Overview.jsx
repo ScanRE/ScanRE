@@ -1,9 +1,14 @@
 import React from 'react'
+import Description from '../components/Description'
+import DoughnutChart from '../components/DoughnutChart'
+import ProgressBar from '../components/ProgressBar'
 
 const Overview = () => {
   return (
-    <div>
-      Overview
+    <div className='m-4 p-4'>
+      <Description />
+      <DoughnutChart />
+      <ProgressBar />
     </div>
   )
 }

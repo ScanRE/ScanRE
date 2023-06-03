@@ -1,9 +1,11 @@
 import React from 'react'
+import FindingsTable from '../components/FindingsTable'
+
 
 const Findings = () => {
   return (
     <div>
-      Findings
+      <FindingsTable />
     </div>
   )
 }
