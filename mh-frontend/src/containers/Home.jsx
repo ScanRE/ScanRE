@@ -4,7 +4,7 @@ import Findings from "./Findings";
 import PotentialFindings from "./PotentialFindings";
 
 const Home = () => {
-	const [activeTab, setActiveTab] = useState("Overview");
+	const [activeTab, setActiveTab] = useState("Findings");
 
 	const handleTabClick = (tab) => {
 		setActiveTab(tab);

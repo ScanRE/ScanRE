@@ -1,9 +1,9 @@
 import React from "react";
 import "./cta.css";
 
-function CTA({ text, onClick }) {
+function CTA({ text, onClick, type}) {
 	return (
-		<button className="btn" onClick={onClick}>
+		<button className={`btn btn-${type}`} onClick={onClick}>
 			{text}
 		</button>
 	);

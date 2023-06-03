@@ -13,6 +13,7 @@
 		"@tanstack/react-table": "^8.9.1",
 		"axios": "^1.4.0",
 		"chart.js": "^4.3.0",
+		"rc-table": "^7.32.1",
 		"react": "^18.2.0",
 		"react-chartjs-2": "^5.2.0",
 		"react-dom": "^18.2.0",

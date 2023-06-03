@@ -1,0 +1,33 @@
+.rc-table {
+  position: relative;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 4rem 2rem;
+  border: 1px solid rgb(162, 162, 162);
+}
+
+.rc-table table {
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.rc-table th, td {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+
+    padding: 0.75rem 0.25rem;
+    white-space: normal;
+    word-break: break-word;
+    border: 1px solid rgb(162, 162, 162);
+    border-top: 0;
+    border-left: 0;
+    transition: box-shadow 0.3s;
+  }
+
+.rc-table th {
+  font-size: 1rem;
+  font-weight: 500;
+}
