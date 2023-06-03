@@ -1,8 +1,16 @@
 import React from 'react'
 import './landing.css';
 import { Navbar, CTA } from './../../components';
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+
+  let navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate('/home');
+  }
+
   return (
     <div className="landing">
       <Navbar/>
@@ -28,7 +36,7 @@ const Landing = () => {
           </div>
         </div>
 
-        <CTA text="Start Ananlyzing" />
+        <CTA text="Start Ananlyzing" onClick={handleSubmit} />
 
       </section>
     </div> 
