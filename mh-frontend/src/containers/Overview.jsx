@@ -3,10 +3,10 @@ import Description from '../components/Description'
 import DoughnutChart from '../components/DoughnutChart'
 import ProgressBar from '../components/ProgressBar'
 
-const Overview = ({ scanResData, scanError }) => {
+const Overview = ({ scanResData }) => {
 
     useEffect(() => {
-      
+      console.log(scanResData)
     }, [])
     
 

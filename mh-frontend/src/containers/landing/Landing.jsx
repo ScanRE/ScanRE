@@ -5,50 +5,48 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
-const Landing = ({ setScanResData, setScanError }) => {
-    let navigate = useNavigate();
+const Landing = ({ scanError, setRepoURL }) => {
+	let navigate = useNavigate();
 
-    const handleSubmit = async () => {
-        await axios
-            .get(`http://127.0.0.1:5000/`)
-            .then((res) => {
-                setScanResData(res);
-            })
-            .catch((err) => {
-                setScanError(err);
-            });
+	const handleSubmit = async () => {
+		navigate("/home");
+	};
 
-        navigate("/home");
-    };
+	return (
+		<div className="landing">
+			<Navbar />
+			<section className="first">
+				<div className="title-tagline">
+					<h1 className="gradient-text">Upload. Scan. Analyze.</h1>
+					<h2 className="tagline">
+						A static code analysis toolkit to scan vulnerabilities
+						blazing fast.
+					</h2>
+				</div>
 
-    return (
-        <div className="landing">
-            <Navbar />
-            <section className="first">
-                <div className="title-tagline">
-                    <h1 className="gradient-text">Upload. Scan. Analyze.</h1>
-                    <h2 className="tagline">A static code analysis toolkit to scan vulnerabilities blazing fast.</h2>
-                </div>
+				<div className="title-input">
+					<span className="instruct">
+						Just paste your GitHub/Gitlab repository link.
+					</span>
 
-                <div className="title-input">
-                    <span className="instruct">Just paste your GitHub/Gitlab repository link.</span>
+					<div className="input-repo">
+						<label htmlFor="name"></label>
+						<input
+							placeholder="https://github.com/<username>/<repo-name>"
+							type="text"
+							id="repo-link"
+							name="repo-link"
+							required
+						/>
+					</div>
+				</div>
 
-                    <div className="input-repo">
-                        <label htmlFor="name"></label>
-                        <input
-                            placeholder="https://github.com/<username>/<repo-name>"
-                            type="text"
-                            id="repo-link"
-                            name="repo-link"
-                            required
-                        />
-                    </div>
-                </div>
+				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
 
-                <CTA text="Start Ananlyzing" onClick={handleSubmit} />
-            </section>
-        </div>
-    );
+				{scanError == "" ? <></> : <div>Error</div>}
+			</section>
+		</div>
+	);
 };
 
 export default Landing;

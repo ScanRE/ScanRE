@@ -31,7 +31,7 @@ const DoughnutChart = ({ scanResData }) => {
         };
 
         // Count the occurrences of each label
-        scanResData.data.results.forEach((result) => {
+        scanResData.results.forEach((result) => {
             const impact = result.extra.metadata.impact;
             if (occurrenceCounts.hasOwnProperty(impact)) {
                 occurrenceCounts[impact] += 1;
