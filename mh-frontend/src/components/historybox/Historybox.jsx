@@ -20,7 +20,7 @@ function Historybox({
     console.log(result);
 
     return (
-        <div className={`price-box glowing-border`}>
+        <div className={`history-box glowing-border`}>
             <div className="one">
                 <span className="heading">{result}</span>
                 <span className="desc">

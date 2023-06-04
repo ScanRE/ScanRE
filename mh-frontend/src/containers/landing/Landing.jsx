@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./landing.css";
 import { Navbar, CTA } from "./../../components";
 import { useNavigate } from "react-router-dom";
+import landing from './../../assets/landing.svg'
 
 import axios from "axios";
 
@@ -12,10 +13,14 @@ const Landing = ({ scanError, setRepoURL }) => {
 		navigate("/home");
 	};
 
+	const moveToID = () => {
+		navigate("#mainLanding");
+	};
+
 	return (
 		<div className="landing">
 			<Navbar />
-			<section className="first">
+			<section className="first" id="mainLanding">
 				<div className="title-tagline">
 					<h1 className="gradient-text">Upload. Scan. Analyze.</h1>
 					<h2 className="tagline">
@@ -41,9 +46,14 @@ const Landing = ({ scanError, setRepoURL }) => {
 					</div>
 				</div>
 
-				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
+				<CTA text="Start Analyzing" onClick={handleSubmit} />
 
 				{scanError === "" ? <></> : <div>{scanError}</div>}
+				
+				<div className="second">
+					<img className="img-landing" src={landing} alt="landing" />
+					<CTA text="Get Started" onClick={moveToID} />
+				</div>
 			</section>
 		</div>
 	);

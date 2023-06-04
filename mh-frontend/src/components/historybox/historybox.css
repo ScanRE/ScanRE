@@ -1,18 +1,18 @@
-
-.price-box {
-	padding: 3rem 2rem;
+.history-box {
+	padding: 3rem 4rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
-	width: 20vw;
+	width: 30vw;
 	height: 30vh;
 	color: #000000;
 	border-radius: 14px;
 	box-shadow: 0px 7px 35px -5px rgba(212, 212, 212, 0.722);
 }
 
-.one, .two {
+.history-box .one,
+.history-box .two {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -20,33 +20,33 @@
 	gap: 0.2rem;
 }
 
-.two {
+.history-box .two {
 	gap: 5rem
 }
 
-.heading {
+.history-box  .heading {
 	font-size: 1.6rem;
 	font-weight: 500;
 }
 
-.total-cost {
+.history-box  .total-cost {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 0.8rem;
 }
 
-.desc {
+.history-box  .desc {
 	font-size: 0.9rem;
 }
 
-.total-cost .cost {
+.history-box  .total-cost .cost {
 	font-weight: 600;
 	letter-spacing: -0.05rem;
 	font-size: 3rem;
 }
 
-.features {
+.history-box  .features {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -57,7 +57,7 @@
 	font-size: 1rem;
 }
 
-.two .btn {
+.history-box .two .btn {
     display: flex;
     align-self: center;
 }
