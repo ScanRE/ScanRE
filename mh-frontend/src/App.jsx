@@ -38,13 +38,13 @@ function App() {
                   path="/home"
                   element={
                       scanResData ? (
-                          <Home scanResData={scanResData} scanError={scanError} />
+                          <Home scanResData={scanResData} scanError={scanError} setFinding={setFinding} />
                       ) : (
-                          <Home scanResData={scanResData} scanError={scanError} />
+                          <Loader />
                       )
                   }
               />
-              <Route path="/findingDetail/*" element={<FindingDetail />} />
+              <Route path="/home/findingDetail/*" element={<FindingDetail finding={finding} />} />
               <Route path="/pricing" element={<Pricing />} />
           </Routes>
       </>

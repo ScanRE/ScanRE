@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import editSVG from "../assets/edit.svg"
 
-const Description = () => {
+const Description = ({files = 0}) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [content, setContent] = useState(
-		"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, illum, minus elit. Sapiente, illum, minus?"
+		`Report of the codebase. Total Files Scanned: ${files}`
 	);
 
 	const handleEditClick = () => {

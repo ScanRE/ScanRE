@@ -16,7 +16,7 @@ const Findings = ({ scanResData, setFinding }) => {
 			scanResData.results.filter((obj) => obj.extra.fingerprint === e)[0]
 		);
 		navigate(`findingDetail/${e}`, {replace: true});
-	};
+	};	
 
 	const columns = [
 		{
