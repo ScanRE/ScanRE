@@ -1,27 +1,19 @@
 import React from "react";
+import InfoTitle from "../InfoTitle";
 
-const References = () => {
-	const references = [
-		{ name: "OWASP Top 10", link: "https://www.owasp.org/top10" },
-		{
-			name: "CWE-123",
-			link: "https://cwe.mitre.org/data/definitions/123.html"
-		}
-		// Add more references as needed
-	];
-
+const References = ({ title, references }) => {
 	return (
-		<div className="bg-white p-4 rounded-lg shadow">
-			<p className="text-gray-600">References:</p>
-			{references.map((reference, index) => (
+		<div className="p-4 rounded-lg shadow border border-gray-400 mt-3">
+			<InfoTitle title={title} />
+			{references.map((link, index) => (
 				<a
 					key={index}
-					href={reference.link}
+					href={link}
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-blue-500 hover:underline"
 				>
-					{reference.name}
+					{link}
 				</a>
 			))}
 		</div>
