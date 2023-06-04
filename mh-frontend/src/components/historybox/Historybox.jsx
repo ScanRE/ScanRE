@@ -17,7 +17,6 @@ function Historybox({ url, lastScanned }) {
 	const formatName = (url) => {
 		return url.split(".")[0];
 	};
-
 	return (
 		<div className={`price-box glowing-border`}>
 			<div className="one">

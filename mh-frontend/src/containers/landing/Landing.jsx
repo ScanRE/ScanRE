@@ -3,6 +3,7 @@ import "./landing.css";
 import { Navbar, CTA } from "./../../components";
 import { useNavigate } from "react-router-dom";
 import Checkbox from "../../components/Checkbox";
+import landing from './../../assets/landing.svg'
 
 import axios from "axios";
 
@@ -13,10 +14,14 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 		navigate("/home");
 	};
 
+	const moveToID = () => {
+		navigate("#mainLanding");
+	};
+
 	return (
 		<div className="landing">
 			<Navbar />
-			<section className="first">
+			<section className="first" id="mainLanding">
 				<div className="title-tagline">
 					<h1 className="gradient-text">Upload. Scan. Analyze.</h1>
 					<h2 className="tagline">
@@ -43,28 +48,14 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 					</div>
 				</div>
 				<Checkbox />
-				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
+				<CTA text="Start Analyzing" onClick={handleSubmit} />
 
-				{scanError === "" ? (
-					<></>
-				) : (
-					<div className="alert alert-error">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="stroke-current shrink-0 h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-							/>
-						</svg>
-						<span>{scanError}</span>
-					</div>
-				)}
+				{scanError === "" ? <></> : <div>{scanError}</div>}
+				
+				<div className="second">
+					<img className="img-landing" src={landing} alt="landing" />
+					<CTA text="Get Started" onClick={moveToID} />
+				</div>
 			</section>
 		</div>
 	);

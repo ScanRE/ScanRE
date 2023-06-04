@@ -20,7 +20,7 @@ function Pricebox({
                 <span className="heading">{tier}</span>
                 <div className="total-cost">
                     <span className="cost">{cost}</span>
-                    <span className="per">per user / month</span>
+                    <span className="per"> / month</span>
                 </div>
                 <span className="desc">
                     {desc}
