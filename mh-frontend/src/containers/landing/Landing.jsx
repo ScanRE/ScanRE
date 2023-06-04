@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./landing.css";
 import { Navbar, CTA } from "./../../components";
 import { useNavigate } from "react-router-dom";
+import Checkbox from "../../components/Checkbox";
 
 import axios from "axios";
 
@@ -41,7 +42,7 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 						/>
 					</div>
 				</div>
-
+				<Checkbox />
 				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
 
 				{scanError === "" ? (
