@@ -78,7 +78,7 @@ const FindingDetail = ({ finding }) => {
 			<CodeSnippet
 				title={"Mitigation"}
 				lang={finding.extra.metadata.technology[0]}
-				code={finding.extra.lines}
+				code={finding.suggestion}
 			/>
 			<References
 				title={"References"}

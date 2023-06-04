@@ -16,7 +16,7 @@ const CodeSnippet = ({ title, code, lang }) => {
             <InfoTitle title={title} />
             <div className="rounded-lg shadow">
                 <SyntaxHighlighter language={lang} style={tomorrow} className="rounded-lg mt-2">
-                    {code}
+                    {code == "" ? "ChatGPT needs additional information to suggest mitigations" : code}
                 </SyntaxHighlighter>
             </div>
         </div>

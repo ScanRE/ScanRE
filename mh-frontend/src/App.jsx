@@ -6,8 +6,8 @@ import Home from "./containers/Home";
 import FindingDetail from "./containers/FindingDetail";
 import Loader from "./components/Loader";
 import axios from "axios";
-import Pricing from './containers/pricing/Pricing';
-import History from './containers/history/History';
+import Pricing from "./containers/pricing/Pricing";
+import History from "./containers/history/History";
 
 function App() {
 	const [scanResData, setScanResData] = useState();
@@ -18,39 +18,71 @@ function App() {
 
 	useEffect(() => {
 		setIsLoading(true);
-		axios
-			.get(`http://127.0.0.1:5000/`)
-			.then((res) => {
-				setScanResData(res.data);
-				setScanError("");
-				setIsLoading(false);
-			})
-			.catch((err) => {
-				setScanError(err);
-				setIsLoading(false);
-			});
+		if (repoURL != "") {
+			// axios
+			// 	.get(
+			// 		`https://scanre.loca.lt?repositoryLink=${encodeURIComponent(
+			// 			repoURL
+			// 		)}`
+			// 	)
+			// 	.then((res) => {
+			// 		console.log(res);
+			// 		setScanResData(res.data);
+			// 		setScanError("");
+			// 		setIsLoading(false);
+			// 	})
+			// 	.catch((err) => {
+			// 		console.log(err);
+			// 		setScanError(err);
+			// 		setIsLoading(false);
+			// 	});
+		}
 	}, [repoURL]);
 
-  return (
-      <>
-          <Routes>
-              <Route path="/" element={<Landing setScanResData={setScanResData} setScanError={setScanError} />} />
-              <Route
-                  path="/home"
-                  element={
-                      scanResData ? (
-                          <Home scanResData={scanResData} scanError={scanError} setFinding={setFinding} />
-                      ) : (
-                          <Loader />
-                      )
-                  }
-              />
-              <Route path="/home/findingDetail/*" element={<FindingDetail finding={finding} />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/history" element={<History />} />
-          </Routes>
-      </>
-  );
+	return (
+		<>
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<Landing
+							setScanResData={setScanResData}
+							setScanError={setScanError}
+							setRepoURL={setRepoURL}
+							scanError={scanError}
+						/>
+					}
+				/>
+				<Route
+					path="/home"
+					element={
+						scanError != "" ? (
+							<Landing
+								setScanResData={setScanResData}
+								setScanError={setScanError}
+								setRepoURL={setRepoURL}
+								scanError={scanError}
+							/>
+						) : isLoading ? (
+							<Loader />
+						) : (
+							<Home
+								scanResData={scanResData}
+								scanError={scanError}
+								setFinding={setFinding}
+							/>
+						)
+					}
+				/>
+				<Route
+					path="/home/findingDetail/*"
+					element={<FindingDetail finding={finding} />}
+				/>
+				<Route path="/pricing" element={<Pricing />} />
+				<Route path="/history" element={<History />} />
+			</Routes>
+		</>
+	);
 }
 
 export default App;
