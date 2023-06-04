@@ -1,0 +1,36 @@
+.history {
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(
+		78.43% 107.43% at 4.61% 5.65%,
+		#e1e1e1 0%,
+		#fafafa 100%
+	);
+	padding-top: 10rem;
+}
+
+h1.title {
+	font-size: 4.5rem;
+	font-weight: 700;
+	letter-spacing: -0.03rem;
+}
+
+.gradient-text {
+	background: linear-gradient(
+		166.9deg,
+		#000000 27.99%,
+		rgba(0, 0, 0, 0) 135.11%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.history-panel {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}

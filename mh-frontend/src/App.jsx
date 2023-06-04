@@ -7,6 +7,7 @@ import FindingDetail from "./containers/FindingDetail";
 import Loader from "./components/Loader";
 import axios from "axios";
 import Pricing from './containers/pricing/Pricing';
+import History from './containers/history/History';
 
 function App() {
 	const [scanResData, setScanResData] = useState();
@@ -46,6 +47,7 @@ function App() {
               />
               <Route path="/home/findingDetail/*" element={<FindingDetail finding={finding} />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/history" element={<History />} />
           </Routes>
       </>
   );
