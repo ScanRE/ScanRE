@@ -15,25 +15,32 @@ const FindingDetail = ({ finding }) => {
 	}, [finding]);
 
 	function calculateAgeInDays(dateString) {
-		// Parse the date string
-		const date = new Date(dateString);
-
-		// Calculate the current date
+		console.log(dateString);
+		const targetDate = new Date("2023-06-04");
 		const currentDate = new Date();
 
-		// Calculate the difference in milliseconds
-		const differenceInMilliseconds = currentDate - date;
+		// Calculate the time difference in milliseconds
+		const timeDifference = targetDate.getTime() - currentDate.getTime();
 
 		// Convert milliseconds to days
-		const days = Math.floor(
-			differenceInMilliseconds / (1000 * 60 * 60 * 24)
-		);
+		const millisecondsInDay = 1000 * 60 * 60 * 24;
+		const daysDifference = Math.ceil(timeDifference / millisecondsInDay);
 
-		return days;
+		return daysDifference;
 	}
 
+	const formatDate = (date) => {
+		const timestamp = new Date(date);
+		const formattedDate = timestamp.toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+			day: "numeric"
+		});
+		return formattedDate;
+	};
+
 	return (
-		<div className="m-4 p-4 text-primary">
+		<div className="m-4 p-[3rem] text-primary">
 			<Link to={"/home"}>
 				<span className="underline underline-offset-2">
 					<img src={leftIcon} className="inline" />
@@ -51,11 +58,11 @@ const FindingDetail = ({ finding }) => {
 				severity={finding.extra.severity}
 				owasp={finding.extra.metadata.owasp[0]}
 				type={"Static"}
-				date={finding.date}
+				date={formatDate(finding.date)}
 				cwe={finding.extra.metadata.cwe[0]}
 				impact={finding.extra.metadata.impact}
 				likelihood={finding.extra.metadata.likelihood}
-				age={calculateAgeInDays(finding.date)}
+				age={calculateAgeInDays("2023-06-03")}
 			/>
 			<FileLocation
 				fileLocation={finding.path}
@@ -63,13 +70,13 @@ const FindingDetail = ({ finding }) => {
 			/>
 			<CodeSnippet
 				title={"Vulnerable"}
-				lang={"php"}
+				lang={finding.extra.metadata.technology[0]}
 				code={finding.extra.lines}
 			/>
 			<Message message={finding.extra.message} />
 			<CodeSnippet
 				title={"Mitigation"}
-				lang={"php"}
+				lang={finding.extra.metadata.technology[0]}
 				code={finding.extra.lines}
 			/>
 			<References

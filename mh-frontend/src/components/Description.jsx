@@ -4,7 +4,7 @@ import editSVG from "../assets/edit.svg"
 const Description = () => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [content, setContent] = useState(
-		"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, illum, minus elit. Sapiente, illum, minus?"
+		"Description about the project"
 	);
 
 	const handleEditClick = () => {
@@ -46,7 +46,7 @@ const Description = () => {
             ) : (
                 <div className="absolute bottom-2 right-2">
                     <button
-                        className="px-2 py-1 text-sm text-white bg-gray-500 rounded shadow"
+                        className="px-2 py-1 text-sm text-white bg-gray-400 rounded shadow"
                         onClick={handleEditClick}
                     >
                         <img src={editSVG} alt="edit" className="w-[70%] inline"/>

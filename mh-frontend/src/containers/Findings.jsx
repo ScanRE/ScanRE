@@ -7,7 +7,7 @@ import FindingDetail from "./FindingDetail";
 import { Link, useNavigate } from "react-router-dom";
 import externalLink from "../assets/externalLink.svg";
 
-const Findings = ({ scanResData, setFinding }) => {
+const Findings = ({ scanResData, setFinding, setScanResData }) => {
 	const navigate = useNavigate();
 
 	const handleClick = (e) => {
@@ -15,7 +15,7 @@ const Findings = ({ scanResData, setFinding }) => {
 		setFinding(
 			scanResData.results.filter((obj) => obj.extra.fingerprint === e)[0]
 		);
-		navigate(`findingDetail/${e}`, {replace: true});
+		navigate(`findingDetail/${e}`, { replace: true });
 	};
 
 	const columns = [
@@ -82,34 +82,37 @@ const Findings = ({ scanResData, setFinding }) => {
 		},
 		{
 			title: "Fixed",
-			dataIndex: "",
-			key: "fixed",
+			dataIndex: "id",
+			key: "checkbox",
 			width: 100,
 			align: "center",
-			render: () => <CTA text="Done" type="small" onClick={handleFixed} />
-		},
-		{
-			title: "Vulnerability",
-			dataIndex: "",
-			key: "vulnerability",
-			width: 100,
-			align: "center",
-			render: () => <CTA text="Move" type="small" onClick={handleFixed} />
+			render: (e) => (
+				<input
+					type="checkbox"
+					onChange={(ele) => handleFixed(e, ele.target.checked)}
+				/>
+			)
 		}
 	];
 
-	const handleFixed = () => {
-		console.log("fix");
+	const handleFixed = (id, checked) => {
+		let oldData = scanResData;
+
+		oldData.results = oldData.results.map((result) => {
+			if (id == result.extra.fingerprint) {
+				return { ...result, "checked": checked };
+			}
+			return result;
+		});
+
+		setScanResData(oldData);
 	};
 
-	function calculateAgeInDays(dateString) {
-		// Parse the date string
+	const calculateAgeInDays = (dateString) => {
 		const date = new Date(dateString);
 
-		// Calculate the current date
 		const currentDate = new Date();
 
-		// Calculate the difference in milliseconds
 		const differenceInMilliseconds = currentDate - date;
 
 		// Convert milliseconds to days
@@ -118,7 +121,17 @@ const Findings = ({ scanResData, setFinding }) => {
 		);
 
 		return days;
-	}
+	};
+
+	const formatDate = (date) => {
+		const timestamp = new Date(date);
+		const formattedDate = timestamp.toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+			day: "numeric"
+		});
+		return formattedDate;
+	};
 
 	function regexForCWE(arr) {
 		if (arr && arr.length > 0) {
@@ -142,7 +155,7 @@ const Findings = ({ scanResData, setFinding }) => {
 			severity: obj.extra.severity,
 			name: obj.check_id,
 			cwe: regexForCWE(obj.extra.metadata.cwe),
-			date: dateOfScan,
+			date: formatDate(dateOfScan),
 			age: age,
 			status: "active"
 		};

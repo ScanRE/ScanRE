@@ -56,6 +56,7 @@ function App() {
 								scanResData={scanResData}
 								scanError={scanError}
 								setFinding={setFinding}
+								setScanResData={setScanResData}
 							/>
 						)
 					}

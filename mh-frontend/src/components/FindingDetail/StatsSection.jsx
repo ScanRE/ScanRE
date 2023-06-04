@@ -28,9 +28,10 @@ const StatsSection = ({
 				<div className="w-1/2 flex gap-4 align-center items-center">
 					<p className="text-gray-900">Severity : </p>
 					<p
-						className={`text-lg font-semibold px-1 rounded-lg bg-${[
-							colorMap.get(severity)
-						]}`}
+						className={`text-lg font-semibold px-1 rounded-lg}`}
+						style={{
+							backgroundColor: `${colorMap.get(severity)}`
+						}}
 					>
 						{severity}
 					</p>
@@ -45,7 +46,7 @@ const StatsSection = ({
 				</div>
 				<div className="w-1/2 flex gap-4 align-center items-center">
 					<p className="text-gray-900">Date : </p>
-					<p className="text-lg font-semibold">{"2023-06-04"}</p>
+					<p className="text-lg font-semibold">{"2023-06-03"}</p>
 				</div>
 				<div className="w-1/2 flex gap-4 align-center items-center">
 					<p className="text-gray-900">CWE : </p>
@@ -54,9 +55,10 @@ const StatsSection = ({
 				<div className="w-1/2 flex gap-4 align-center items-center">
 					<p className="text-gray-900">Impact : </p>
 					<p
-						className={`text-lg font-semibold px-1 rounded-lg bg-${[
-							colorMap.get(impact)
-						]}`}
+						className={`text-lg font-semibold p-1 px-2 rounded-lg`}
+						style={{
+							backgroundColor: `${colorMap.get(impact)}`
+						}}
 					>
 						{impact}
 					</p>
@@ -64,9 +66,10 @@ const StatsSection = ({
 				<div className="w-1/2 flex gap-4 align-center items-center">
 					<p className="text-gray-900">Likelihood : </p>
 					<p
-						className={`text-lg font-semibold px-1 rounded-lg bg-${[
-							colorMap.get(likelihood)
-						]}`}
+						className={`text-lg font-semibold p-1 px-2 rounded-lg`}
+						style={{
+							backgroundColor: `${colorMap.get(likelihood)}`
+						}}
 					>
 						{likelihood}
 					</p>

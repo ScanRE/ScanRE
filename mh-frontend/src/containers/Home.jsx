@@ -3,7 +3,7 @@ import Overview from "./Overview";
 import Findings from "./Findings";
 import PotentialFindings from "./PotentialFindings";
 
-const Home = ({ scanResData, scanError, setFinding }) => {
+const Home = ({ scanResData, scanError, setFinding, setScanResData }) => {
 	const [activeTab, setActiveTab] = useState("Overview");
 
 	useEffect(() => {}, []);
@@ -55,9 +55,16 @@ const Home = ({ scanResData, scanError, setFinding }) => {
 						<Findings
 							scanResData={scanResData}
 							setFinding={setFinding}
+							setScanResData={setScanResData}
 						/>
 					)}
-					{activeTab === "PotentialFindings" && <PotentialFindings />}
+					{activeTab === "PotentialFindings" && (
+						<PotentialFindings
+							scanResData={scanResData}
+							setFinding={setFinding}
+							setScanResData={setScanResData}
+						/>
+					)}
 				</div>
 			</div>
 		</div>
