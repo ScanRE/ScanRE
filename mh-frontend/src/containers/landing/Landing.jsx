@@ -43,7 +43,7 @@ const Landing = ({ scanError, setRepoURL }) => {
 
 				<CTA text="Start Ananlyzing" onClick={handleSubmit} />
 
-				{scanError == "" ? <></> : <div>Error</div>}
+				{scanError === "" ? <></> : <div>{scanError}</div>}
 			</section>
 		</div>
 	);

@@ -18,7 +18,7 @@ const Overview = ({ scanResData }) => {
 
 	return (
 		<div className="m-4 p-4">
-			<Description />
+			<Description files={scanResData.paths.scanned.length}/>
 			<div className="flex justify-evenly">
 				<DoughnutChart scanResData={scanResData} />
 				<ProgressBar progress={progress} />

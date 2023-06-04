@@ -121,7 +121,7 @@ const Findings = ({ scanResData, setFinding, setScanResData }) => {
 		);
 
 		return days;
-	};
+	}
 
 	const formatDate = (date) => {
 		const timestamp = new Date(date);
@@ -132,7 +132,6 @@ const Findings = ({ scanResData, setFinding, setScanResData }) => {
 		});
 		return formattedDate;
 	};
-
 	function regexForCWE(arr) {
 		if (arr && arr.length > 0) {
 			const regex = /CWE-(\d+)/;

@@ -11,13 +11,13 @@ function Navbar() {
 					<a href="/">Features</a>
 				</li>
 				<li>
-					<a href="/">Plans</a>
+					<a href="/pricing">Pricing</a>
 				</li>
 				<li>
 					<a href="/">Contact</a>
 				</li>
 				<li>
-					<a href="/">Login</a>
+					<a href="/history">Login</a>
 				</li>
 			</ul>
 		</nav>

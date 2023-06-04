@@ -10,6 +10,7 @@ import Info from "../components/Info";
 import { useEffect } from "react";
 
 const FindingDetail = ({ finding }) => {
+	console.log(finding);
 	useEffect(() => {
 		console.log(finding);
 	}, [finding]);

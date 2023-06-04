@@ -6,6 +6,8 @@ import Home from "./containers/Home";
 import FindingDetail from "./containers/FindingDetail";
 import Loader from "./components/Loader";
 import axios from "axios";
+import Pricing from './containers/pricing/Pricing';
+import History from './containers/history/History';
 
 function App() {
 	const [scanResData, setScanResData] = useState();
@@ -29,45 +31,26 @@ function App() {
 			});
 	}, [repoURL]);
 
-	return (
-		<>
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<Landing
-							scanError={scanError}
-							setRepoURL={setRepoURL}
-						/>
-					}
-				/>
-				<Route
-					path="/home"
-					element={
-						scanError ? (
-							<Landing
-								scanError={scanError}
-								setRepoURL={setRepoURL}
-							/>
-						) : isLoading ? (
-							<Loader />
-						) : (
-							<Home
-								scanResData={scanResData}
-								scanError={scanError}
-								setFinding={setFinding}
-								setScanResData={setScanResData}
-							/>
-						)
-					}
-				/>
-				<Route
-					path="/home/findingDetail/:id"
-					element={<FindingDetail finding={finding} />}
-				/>
-			</Routes>
-		</>
-	);
+  return (
+      <>
+          <Routes>
+              <Route path="/" element={<Landing setScanResData={setScanResData} setScanError={setScanError} />} />
+              <Route
+                  path="/home"
+                  element={
+                      scanResData ? (
+                          <Home scanResData={scanResData} scanError={scanError} setFinding={setFinding} />
+                      ) : (
+                          <Loader />
+                      )
+                  }
+              />
+              <Route path="/home/findingDetail/*" element={<FindingDetail finding={finding} />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/history" element={<History />} />
+          </Routes>
+      </>
+  );
 }
 
 export default App;

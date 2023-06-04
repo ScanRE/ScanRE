@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import editSVG from "../assets/edit.svg"
 
-const Description = () => {
+const Description = ({files = 0}) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [content, setContent] = useState(
-		"Description about the project"
+		`Report of the codebase. Total Files Scanned: ${files}`
 	);
 
 	const handleEditClick = () => {
