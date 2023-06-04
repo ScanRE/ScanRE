@@ -1,0 +1,82 @@
+
+.price-box {
+	padding: 3rem 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 20vw;
+	height: 70vh;
+	color: #000000;
+	border-radius: 14px;
+	box-shadow: 0px 7px 35px -5px rgba(212, 212, 212, 0.722);
+}
+
+.one, .two {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.two {
+	gap: 5rem
+}
+
+.heading {
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+
+.total-cost {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.8rem;
+}
+
+.desc {
+	font-size: 0.9rem;
+}
+
+.total-cost .cost {
+	font-weight: 600;
+	letter-spacing: -0.05rem;
+	font-size: 3rem;
+}
+
+.features {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 0rem;
+}
+.features .feature {
+	font-size: 1rem;
+}
+
+.two .btn {
+    display: flex;
+    align-self: center;
+}
+
+.glowing-border {
+    border: 2px solid #dadada;
+}
+
+.glowing-border:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.feature:before {
+	content: "→";
+	padding-right: 1rem;
+}
+
+.lifted {
+	scale: 1.04;
+}

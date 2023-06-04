@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./containers/landing/Landing";
 import Home from "./containers/Home";
 import FindingDetail from "./containers/FindingDetail";
+import Pricing from './containers/pricing/Pricing';
 
 function App() {
     const [scanResData, setScanResData] = useState();
@@ -24,6 +25,7 @@ function App() {
                   }
               />
               <Route path="/findingDetail/*" element={<FindingDetail />} />
+              <Route path="/pricing" element={<Pricing />} />
           </Routes>
       </>
   );

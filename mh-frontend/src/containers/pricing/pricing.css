@@ -1,0 +1,72 @@
+.pricing {
+	width: 100vw;
+    height: 150vh;
+	background: radial-gradient(
+		78.43% 107.43% at 4.61% 5.65%,
+		#e1e1e1 0%,
+		#fafafa 100%
+	);
+	padding-top: 8rem;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.first, .title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.first {
+    gap: 4rem;
+}
+
+.pricing h1 {
+	font-size: 4.5rem;
+	font-weight: 700;
+	letter-spacing: -0.03rem;
+}
+
+.tagline {
+	font-weight: 400;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	color: #6d6d6d;
+}
+
+.gradient-text {
+	background: linear-gradient(
+		166.9deg,
+		#000000 27.99%,
+		rgba(0, 0, 0, 0) 135.11%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+.pricing-models {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+}
+
+.rec {
+	position: absolute;
+	translate: 0 -4rem;
+	background: black;
+	color: white;
+	font-size: 0.8rem;
+	border-radius: 1rem;
+	padding: 0.3rem 1.25rem;
+}

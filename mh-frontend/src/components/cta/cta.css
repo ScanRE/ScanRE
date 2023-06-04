@@ -1,5 +1,5 @@
 .btn {
-	color: white;
+	color: rgb(242, 242, 242) !important;
 	background: #1c1c1c;
 	box-shadow: 0px 7px 35px 2px rgba(0, 0, 0, 0.25);
 	font-size: 1rem;
