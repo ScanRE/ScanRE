@@ -6,13 +6,13 @@
 		#e1e1e1 0%,
 		#fafafa 100%
 	);
-	padding-top: 8rem;
+	padding-top: 10rem;
 }
 
-section {
+/* section {
 	width: 100vw;
 	padding: 5rem 0;
-}
+} */
 
 .first {
 	display: flex;
