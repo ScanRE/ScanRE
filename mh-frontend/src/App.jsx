@@ -19,23 +19,23 @@ function App() {
 	useEffect(() => {
 		setIsLoading(true);
 		if (repoURL != "") {
-			// axios
-			// 	.get(
-			// 		`https://scanre.loca.lt?repositoryLink=${encodeURIComponent(
-			// 			repoURL
-			// 		)}`
-			// 	)
-			// 	.then((res) => {
-			// 		console.log(res);
-			// 		setScanResData(res.data);
-			// 		setScanError("");
-			// 		setIsLoading(false);
-			// 	})
-			// 	.catch((err) => {
-			// 		console.log(err);
-			// 		setScanError(err);
-			// 		setIsLoading(false);
-			// 	});
+			axios
+				.get(
+					`http://localhost:5000?repositoryLink=${encodeURIComponent(
+						repoURL
+					)}`
+				)
+				.then((res) => {
+					console.log(res);
+					setScanResData(res.data);
+					setScanError("");
+					setIsLoading(false);
+				})
+				.catch((err) => {
+					console.log(err);
+					setScanError(err);
+					setIsLoading(false);
+				});
 		}
 	}, [repoURL]);
 
