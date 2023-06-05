@@ -12,14 +12,13 @@ import History from "./containers/history/History";
 function App() {
 	const [scanResData, setScanResData] = useState();
 	const [scanError, setScanError] = useState("");
-	const [repoURL, setRepoURL] = useState();
+	const [repoURL, setRepoURL] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [finding, setFinding] = useState();
 
 	useEffect(() => {
-		setIsLoading(true);
-		if (repoURL != "" && typeof repoURL !== "undefined") {
-			console.log(repoURL);
+		if (repoURL !== "" && typeof repoURL !== "undefined") {
+			setIsLoading(true);
 			axios
 				.get(
 					`http://localhost:5000?repositoryLink=${encodeURIComponent(
@@ -32,8 +31,8 @@ function App() {
 					setIsLoading(false);
 				})
 				.catch((err) => {
-					console.log(err);
-					setScanError(err);
+					console.log(err.message);
+					setScanError(err.message);
 					setIsLoading(false);
 				});
 		}
@@ -46,7 +45,6 @@ function App() {
 					path="/"
 					element={
 						<Landing
-							setScanResData={setScanResData}
 							setScanError={setScanError}
 							setRepoURL={setRepoURL}
 							scanError={scanError}
@@ -58,7 +56,6 @@ function App() {
 					element={
 						scanError != "" ? (
 							<Landing
-								setScanResData={setScanResData}
 								setScanError={setScanError}
 								setRepoURL={setRepoURL}
 								scanError={scanError}

@@ -6,17 +6,22 @@ import Checkbox from "../../components/Checkbox";
 import landing from "./../../assets/landing.svg";
 
 import axios from "axios";
+import { useState } from "react";
 
-const Landing = ({ scanError, setRepoURL, setScanError }) => {
+const Landing = ({ scanError, setRepoURL }) => {
 	let navigate = useNavigate();
 
 	const handleSubmit = async () => {
-		navigate("/home");
+		if (scanError === "") {
+			navigate("/home");
+		}
 	};
 
 	const moveToID = () => {
 		navigate("#mainLanding");
 	};
+
+	const [showToast, setShowToast] = useState(true);
 
 	return (
 		<div className="landing">
@@ -52,7 +57,34 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 				</div>
 				<CTA text="Start Analyzing" onClick={handleSubmit} />
 
-				{scanError === "" ? <></> : <div>{scanError}</div>}
+				{scanError === "" || showToast === false ? (
+					<></>
+				) : (
+					<div className="toast toast-end">
+						<div className="alert alert-error">
+							<button
+								onClick={() => {
+									setShowToast(false);
+								}}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									className="stroke-current shrink-0 h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+									/>
+								</svg>
+							</button>
+							<span>{scanError}</span>
+						</div>
+					</div>
+				)}
 
 				<div className="second">
 					<img className="img-landing" src={landing} alt="landing" />
