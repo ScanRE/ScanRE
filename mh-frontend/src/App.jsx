@@ -18,7 +18,8 @@ function App() {
 
 	useEffect(() => {
 		setIsLoading(true);
-		if (repoURL != "") {
+		if (repoURL != "" && typeof repoURL !== "undefined") {
+			console.log(repoURL);
 			axios
 				.get(
 					`http://localhost:5000?repositoryLink=${encodeURIComponent(
@@ -26,7 +27,6 @@ function App() {
 					)}`
 				)
 				.then((res) => {
-					console.log(res);
 					setScanResData(res.data);
 					setScanError("");
 					setIsLoading(false);

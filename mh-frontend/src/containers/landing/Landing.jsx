@@ -3,7 +3,7 @@ import "./landing.css";
 import { Navbar, CTA } from "./../../components";
 import { useNavigate } from "react-router-dom";
 import Checkbox from "../../components/Checkbox";
-import landing from './../../assets/landing.svg'
+import landing from "./../../assets/landing.svg";
 
 import axios from "axios";
 
@@ -30,8 +30,8 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 					</h2>
 				</div>
 
-				<div className="title-input">
-					<span className="instruct">
+				<div className="title-input grid">
+					<span className="instruct justify-self-center">
 						Just paste your GitHub/Gitlab repository link.
 					</span>
 
@@ -46,12 +46,14 @@ const Landing = ({ scanError, setRepoURL, setScanError }) => {
 							onChange={(e) => setRepoURL(e.target.value)}
 						/>
 					</div>
+					<div className="justify-self-end">
+						<Checkbox />
+					</div>
 				</div>
-				<Checkbox />
 				<CTA text="Start Analyzing" onClick={handleSubmit} />
 
 				{scanError === "" ? <></> : <div>{scanError}</div>}
-				
+
 				<div className="second">
 					<img className="img-landing" src={landing} alt="landing" />
 					<CTA text="Get Started" onClick={moveToID} />

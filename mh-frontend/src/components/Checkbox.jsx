@@ -1,22 +1,26 @@
 import { useState } from "react";
+import Switch from "react-switch";
 
 function Checkbox() {
 	const [isChecked, setIsChecked] = useState(false);
 
-	const handleCheckboxChange = (e) => {
-		setIsChecked(e.target.checked);
+	const handleToggleChange = () => {
+		setIsChecked(!isChecked);
 	};
 
 	return (
-		<div className="flex items-center space-x-2 justify-items-end justify-end">
-			<input
-				type="checkbox"
-				id="deepScanCheckbox"
+		<div className="flex items-center space-x-2 justify-end">
+			<Switch
+				id="deepScanToggle"
 				checked={isChecked}
-				onChange={handleCheckboxChange}
-				className="h-4 w-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded"
+				onChange={handleToggleChange}
+				onColor="#111"
+				offColor="#666"
+				handleDiameter={18}
+				uncheckedIcon={false}
+				checkedIcon={false}
 			/>
-			<label htmlFor="deepScanCheckbox" className="text-xl text-gray-700">
+			<label htmlFor="deepScanToggle" className="text-lg text-gray-800">
 				Deep Scan
 			</label>
 		</div>
