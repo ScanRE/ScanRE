@@ -2,6 +2,18 @@
 <p align="center">
 <img src="https://github.com/SaketThota/mh-hacks/assets/52862591/0dee415d-14ec-4443-858c-ec2550ac04d5.png"></img>
 </p>
+<br />
+<br />
+
+## What was our motivation?
+To help improve the security posture of open sourced software in the industry.
+
+![image](https://user-images.githubusercontent.com/52862591/234079995-43c5a83b-a1cc-420b-838c-1f0e86343d93.png)
+
+* Most of modern infrastructure relies on open-source software.
+* Developers blindly import and use vulnerable code.
+* Most people aren’t aware of best practices.
+* Finding vulnerabilities is a mostly manual and tedious process.
 
 ## What is Static Code Analysis?
 
@@ -18,20 +30,14 @@ To model and explore the astronomical number of combinations of circumstances, s
 
 A high level layout of our system is shown below.
 
-
+![image](https://github.com/SaketThota/mh-hacks/assets/52862591/f80393e5-50ad-4a05-aac8-dddeca2d6953)
 
 We've made extensive use of docker and celery to ensure that we are able to tackle the asynchronous nature of our task, i.e. scanning multiple files of code, each having different sizes across multiple repositories. A high level architecture of celery is shown below.
 
+![image](https://github.com/SaketThota/mh-hacks/assets/52862591/95197f4e-2cdb-4ee1-b697-bf6c064ec63a)
 
 
-
-## What was our motivation?
-To help improve the security posture of open sourced software in the industry.
-
-![image](https://user-images.githubusercontent.com/52862591/234079995-43c5a83b-a1cc-420b-838c-1f0e86343d93.png)
-
-
-## Metrics:
+## Performance metrics:
 Since the underlying system is primarily built on top of SemGrep, our performance is mainly determined by the performance of SemGrep. Semgrep is able to outperform GitGuardian and other code analysis tools, both, in terms of time taken and false positives flagged.
 
 ![image](https://user-images.githubusercontent.com/52862591/234083312-6bc6cec7-0312-45ef-ab36-a55b3f381efd.png)
@@ -49,3 +55,4 @@ Semgrep succeeds in that it only carries out single-file analysis, so the contro
 * https://nullcon.net/goa-2022/unearthing-malicious-and-other-risky-open-source-packages-using-packj
 * https://nullcon.net/goa-2022/raining-CVEs-on-wordpress-plugins-with-semgrep
 * https://semgrep.dev/blog/2022/static-analysis-speed
+* https://core-research-team.github.io/2020-03-01/Celery-Flask-30e28a8974974f6cb55ed0c07d042671
