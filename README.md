@@ -1,6 +1,6 @@
-<h1 align="center">ScanRE</h1>
+
 <p align="center">
-![image](https://github.com/SaketThota/mh-hacks/assets/52862591/0dee415d-14ec-4443-858c-ec2550ac04d5)
+<img src="https://github.com/SaketThota/mh-hacks/assets/52862591/0dee415d-14ec-4443-858c-ec2550ac04d5.png"></img>
 </p>
 
 ## What is Static Code Analysis?
