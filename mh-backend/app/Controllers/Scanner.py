@@ -2,7 +2,6 @@ import subprocess
 import os
 import asyncio
 import json
-import requests
 # common scanner class for scanning repositories
 import datetime
 from . import chatGPT

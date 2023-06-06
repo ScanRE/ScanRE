@@ -11,6 +11,8 @@ import asyncio
 import validators
 from os import listdir
 from os.path import isfile, join
+from flask import session,render_template,request,redirect,url_for
+
 load_dotenv()
 #logger = get_task_logger(__name__)
 
@@ -30,31 +32,39 @@ def scan(repositoryLink,path,repositoryName,finalOutput,multipleDirectories=0):
         loop.run_until_complete(scanObj.cleanUp())
         return "success"
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST','OPTIONS'])
 def add_task():
-    repositoryLink = request.args.get("repositoryLink")
-    print(repositoryLink)
-    if validators.url(repositoryLink):
-        path = os.getenv("clonePath")
-        values = repositoryLink.split("/")
-        repositoryName = values[4].split(".")[0]
-        finalOutput = os.getenv("clonePath")
-        scan(repositoryLink,path,repositoryName,finalOutput)
-        resp = make_response(json.load(open(finalOutput+"/"+repositoryName+".json","r")))
-        resp.headers['Content-Type'] = 'application/json'
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        return resp
-    else:
-        resp = Response('{"error":"invalid git repository given"}')
-        # print(result)
-        # resp.headers['Access-Control-Allow-Origin'] = '*'
-        # resp.headers['Location'] = 'https://scanre.loca.lt/engagement/3'
-        # return resp
-        resp.headers['Content-Type'] = 'application/json'
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        return resp
+    if request.method=='GET':
+        repositoryLink = request.args.get("repositoryLink")
+        print(repositoryLink)
+        if validators.url(repositoryLink):
+            path = os.getenv("clonePath")
+            values = repositoryLink.split("/")
+            repositoryName = values[4].split(".")[0]
+            finalOutput = os.getenv("clonePath")
+            scan(repositoryLink,path,repositoryName,finalOutput)
+            resp = make_response(json.load(open(finalOutput+"/"+repositoryName+".json","r")))
+            resp.headers['Content-Type'] = 'application/json'
+            resp.headers['Access-Control-Allow-Origin'] = '*'
+            return resp
+        else:
+            resp = Response('{"error":"invalid git repository given"}')
+            # print(result)
+            # resp.headers['Access-Control-Allow-Origin'] = '*'
+            # resp.headers['Location'] = 'https://scanre.loca.lt/engagement/3'
+            # return resp
+            resp.headers['Content-Type'] = 'application/json'
+            resp.headers['Access-Control-Allow-Origin'] = '*'
+            return resp
+    elif request.method=='OPTIONS':
+        return _build_cors_preflight_response()
 
-from flask import Flask,session,render_template,request,redirect,url_for
+def _build_cors_preflight_response():
+    response = make_response()
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    response.headers.add('Access-Control-Allow-Headers', "*")
+    response.headers.add('Access-Control-Allow-Methods', "*")
+    return response
 
 @app.route('/login',methods=['GET','POST'])
 def login():
