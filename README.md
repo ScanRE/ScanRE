@@ -1,6 +1,7 @@
 <h1 align="center">ScanRE</h1>
-
-## A static code analysis toolkit built as a wrapper around SemGrep, ORT and other tools
+<p align="center">
+![image](https://github.com/SaketThota/mh-hacks/assets/52862591/0dee415d-14ec-4443-858c-ec2550ac04d5)
+</p>
 
 ## What is Static Code Analysis?
 
@@ -24,13 +25,13 @@ We've made extensive use of docker and celery to ensure that we are able to tack
 
 
 
-# What was our motivation?
+## What was our motivation?
 To help improve the security posture of open sourced software in the industry.
 
 ![image](https://user-images.githubusercontent.com/52862591/234079995-43c5a83b-a1cc-420b-838c-1f0e86343d93.png)
 
 
-# Metrics:
+## Metrics:
 Since the underlying system is primarily built on top of SemGrep, our performance is mainly determined by the performance of SemGrep. Semgrep is able to outperform GitGuardian and other code analysis tools, both, in terms of time taken and false positives flagged.
 
 ![image](https://user-images.githubusercontent.com/52862591/234083312-6bc6cec7-0312-45ef-ab36-a55b3f381efd.png)
@@ -42,7 +43,7 @@ These analyses are not necessarily ones that can be done quickly. Taint analysis
 Semgrep succeeds in that it only carries out single-file analysis, so the control flow graph never exceeds the size of a file. In addition, taint can be done incrementally. Functions have well-defined points where they begin and end, as well as generally well-defined entrances in terms of the data they accept (the function arguments). Thus, Semgrep collects taint summaries, which essentially (per function) encode the information about what taint may be possible, depending on the taint of the inputs that flow in.
 ![image](https://user-images.githubusercontent.com/52862591/234083232-4af327b3-5f37-4611-af16-237a73a128d6.png)
 
-References:
+## References:
 
 * https://nullcon.net/goa-2022/hack-the-source
 * https://nullcon.net/goa-2022/unearthing-malicious-and-other-risky-open-source-packages-using-packj
