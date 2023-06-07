@@ -25,7 +25,7 @@ That’s according to a recently released report conducted by International Data
 ![image](https://user-images.githubusercontent.com/52862591/234079995-43c5a83b-a1cc-420b-838c-1f0e86343d93.png)
 
 * Most of modern infrastructure relies on open-source software.
-* Developers blindly import and use vulnerable code.
+* Developers blindly import and use vulnerable or malicious code.
 * Most people aren’t aware of best practices.
 * Finding vulnerabilities is a mostly manual and tedious process.
 
@@ -37,10 +37,10 @@ Static analysis is a method of debugging that is done by automatically examining
 
 They operate by querying or traversing the model, looking for particular properties or patterns that indicate defects. Sophisticated symbolic execution techniques explore paths through a control-flow graph. The data structure representing paths that might be traversed by a program during its execution. A warning is generated, if the path exploration notices an anomaly.
 
-To model and explore the astronomical number of combinations of circumstances, scanners employ a variety of strategies to ensure scalability. For example, procedures summaries are refined and compacted during the analysis, and paths are explored in an order that minimizes paging. 
-
-
 # Architecture:
+
+In a hackathon, the main tradeoff is between the code quality, the features and finally, the time we have been given to come up with a complete solution. We therefore had to take a decision regarding which features we were to prioritize over others and which features we could leave until the end. It always helps to architect your solution before you put down any code, and that is what we did.
+
 - The project contains 2 broad directories.
 
 ```
@@ -57,6 +57,7 @@ The backend was written in Python, i.e. using the Flask framework and the fronte
 ### Individual components:
 </br>
 * <a href="https://github.com/oss-review-toolkit/ort/">The OSS Review Toolkit (ORT)</a> is a FOSS policy automation and orchestration toolkit which you can use to manage your (open source) software dependencies in a strategic, safe and efficient manner.
+<br>
 <br>
 * <a href="https://github.com/returntocorp/semgrep">Semgrep</a> is a fast, open-source, static analysis engine for finding bugs, detecting vulnerabilities in third-party dependencies, and enforcing code standards. Semgrep analyzes code locally on your computer or in your build environment: code is never uploaded.
 <br>
