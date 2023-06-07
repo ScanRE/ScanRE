@@ -10,14 +10,14 @@
  
 
 # What was our motivation?
-To help improve the security posture of open sourced software in the industry :)
+To help improve the security posture of open-sourced software in the industry :)
 
 ## Alert Fatigue!
 Frequent alerts about cybersecurity threats can lead to so-called “alert fatigue” which numbs the staff to cyber alerts, resulting in longer response times or missed alerts. The fatigue, in turn, can create burnout in IT departments, which then results in more turnover among the staff. When replacement personnel are hired, the cycle begins again.
 
 That’s according to a recently released report conducted by International Data Corporation (IDC) for Critical Start, a cybersecurity consulting and managed detection and response company. IDC surveyed more than 300 U.S.-based IT executives at companies with 500 or more employees. It found that:
 
-   * Security staff spend an average of 30minutes for each actionable alert, while 32 minutes are lost chasing each false lead.
+   * Security staff spend an average of 30 minutes for each actionable alert, while 32 minutes are lost chasing each false lead.
    * Companies with 500-1,499 employees ignore or don’t investigate 27% of all alerts.
    * The figure is nearly a third (30%) for companies with 1,500-4,999 employees and 23% for those with 5,000 or more employees.
 
@@ -39,7 +39,7 @@ They operate by querying or traversing the model, looking for particular propert
 
 # Architecture:
 
-In a hackathon, the main tradeoff is between the code quality, the features and finally, the time we have been given to come up with a complete solution. We therefore had to take a decision regarding which features we were to prioritize over others and which features we could leave until the end. It always helps to architect your solution before you put down any code, and that is what we did.
+In a hackathon, the main tradeoff is between the code quality, the features and finally, the time we have been given to come up with a complete solution. We, therefore, had to take a decision regarding which features we were to prioritize over others and which features we could leave until the end. It always helps to architect your solution before you put down any code, and that is what we did.
 
 - The project contains 2 broad directories.
 
@@ -65,7 +65,7 @@ We've made extensive use of docker and celery to ensure that we are able to tack
 
 ![image](https://github.com/SaketThota/ScanRE/assets/52862591/7d8b168f-b4b3-43ea-aa6b-2964876097c2)
 
-We decided to go ahead and integrate these two, i.e. semgrep and ORT together with ChatGPT (GPT-4) so that we could ensure that we get the best of all worlds (Scanning user code as well as that of dependencies as well as get suggested mitigations) And that was the heart of our solution. It reduces alert fatigue, allows the security team to focus on what matters and helps the team better utilize existing resources. A win-win all round :)
+We decided to go ahead and integrate these two, i.e. semgrep and ORT together with ChatGPT (GPT-4) so that we could ensure that we get the best of all worlds (Scanning user code as well as that of dependencies as well as get suggested mitigations) And that was the heart of our solution. It reduces alert fatigue, allows the security team to focus on what matters and helps the team better utilize existing resources. A win-win all around :)
 
 # Screens:
 * Prompt the user to enter a GitHub or GitLab URL
@@ -80,12 +80,12 @@ We decided to go ahead and integrate these two, i.e. semgrep and ORT together wi
 * List of findings
 ![image](https://github.com/SaketThota/ScanRE/assets/52862591/2e1fe903-d39a-456b-bf8e-1130604c0d83)
 
-* Results in an easy to understand format along with severity, likelihood, file path and line number in which the vulnerability was detected, the CWE details and suggested mitigation stratergy as well as past scan findings and vulnerability tracking.
+* Results in an easy to understand format along with severity, likelihood, file path and line number in which the vulnerability was detected, the CWE details and suggested mitigation strategy as well as past scan findings and vulnerability tracking.
 ![image](https://github.com/SaketThota/ScanRE/assets/52862591/f54eb52b-0585-44dd-95f7-749f26e9deb8)
 
 # Performance metrics:
 It made sense to include benchmarks to show expected performance from our system :)
-The time taken to complete a scan is totally dependent on the olume of code being scanned.
+The time taken to complete a scan is totally dependent on the volume of code being scanned.
 Since the underlying system is primarily built on top of SemGrep, our performance is mainly determined by the performance of SemGrep. Semgrep is able to outperform GitGuardian and other code analysis tools, both, in terms of time taken and false positives flagged.
 
 ![image](https://user-images.githubusercontent.com/52862591/234083312-6bc6cec7-0312-45ef-ab36-a55b3f381efd.png)
