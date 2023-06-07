@@ -48,7 +48,7 @@ In a hackathon, the main tradeoff is between the code quality, the features and 
 ├───mh-backend
 └───mh-frontend
 ```
-The backend was written in Python, i.e. using the Flask framework and the frontend was written using React. Detailed instructions can be found in the individual directories on setting up the project.
+The backend was written in Python, i.e. using the Flask framework and the frontend was written using React. Detailed instructions can be found in the individual directories on setting up the project. (For those who want to tinker around with the output of our backend system, we've included a sample output.json file in the root directory. Have fun :)
 
 ## A high level layout of our system is shown below.
 
