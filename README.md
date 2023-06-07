@@ -12,6 +12,16 @@
 # What was our motivation?
 To help improve the security posture of open sourced software in the industry :)
 
+## Alert Fatigue!
+Frequent alerts about cybersecurity threats can lead to so-called “alert fatigue” which numbs the staff to cyber alerts, resulting in longer response times or missed alerts. The fatigue, in turn, can create burnout in IT departments, which then results in more turnover among the staff. When replacement personnel are hired, the cycle begins again.
+
+That’s according to a recently released report conducted by International Data Corporation (IDC) for Critical Start, a cybersecurity consulting and managed detection and response company. IDC surveyed more than 300 U.S.-based IT executives at companies with 500 or more employees. It found that:
+
+   * Security staff spend an average of 30minutes for each actionable alert, while 32 minutes are lost chasing each false lead.
+   * Companies with 500-1,499 employees ignore or don’t investigate 27% of all alerts.
+   * The figure is nearly a third (30%) for companies with 1,500-4,999 employees and 23% for those with 5,000 or more employees.
+
+
 ![image](https://user-images.githubusercontent.com/52862591/234079995-43c5a83b-a1cc-420b-838c-1f0e86343d93.png)
 
 * Most of modern infrastructure relies on open-source software.
@@ -93,6 +103,7 @@ Semgrep succeeds in that it only carries out single-file analysis, so the contro
 * https://nullcon.net/goa-2022/raining-CVEs-on-wordpress-plugins-with-semgrep
 * https://semgrep.dev/blog/2022/static-analysis-speed
 * https://core-research-team.github.io/2020-03-01/Celery-Flask-30e28a8974974f6cb55ed0c07d042671
+* https://www.forbes.com/sites/edwardsegal/2021/11/08/alert-fatigue-can-lead-to-missed-cyber-threats-and-staff-retentionrecruitment-issues-study/?sh=44ddb61535c9
 
 ## Team members:
 
