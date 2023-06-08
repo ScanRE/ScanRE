@@ -6,7 +6,7 @@ The backend server is written in flask and wraps Semgrep with ORT and OpenAI's A
 
 Set the environment variables as shown in the .envexample file
 
-For reference you .env file needs to be in mh-backend/app and have:
+For reference your .env file needs to be in mh-backend/app and have:
 ```
 CELERY_BROKER_URL=redis://127.0.0.1:6379/0/example/url
 clonePath = '/some/temp/path/where/the/code/is/cloned'
