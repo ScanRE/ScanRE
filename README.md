@@ -4,9 +4,11 @@
 <br>
 </p>
 
-# Demo:
+# Demo Video:
 
-https://github.com/SaketThota/ScanRE/assets/52862591/b307cd7a-9c0f-467e-b111-7b80e841858f
+https://github.com/SaketThota/ScanRE/assets/52862591/cbbc158d-dc63-4ffb-87a6-dea886d69955
+
+
 
 # Features:
 
