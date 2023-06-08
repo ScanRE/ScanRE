@@ -4,6 +4,10 @@
 <br>
 </p>
 
+# Demo:
+
+https://github.com/SaketThota/ScanRE/assets/52862591/b307cd7a-9c0f-467e-b111-7b80e841858f
+
 # Features:
 
 ![image](https://github.com/SaketThota/ScanRE/assets/52862591/019fd04a-946b-41e3-a6ee-fde36d149cef)
