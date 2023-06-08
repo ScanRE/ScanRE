@@ -35,6 +35,8 @@ https://github.com/SaketThota/ScanRE/assets/52862591/cbbc158d-dc63-4ffb-87a6-dea
 
 Or view the video on YouTube: [ScanRE — Static Code Analysis Toolkit](https://youtu.be/C9mS0H-aYro)
 
+- View our presentation: [MumbaiHacks - ScanRE](https://docs.google.com/presentation/d/1haDSgI9OEOWtwJPbFDM7Lw1ajEpMIT02Hh6ZPWZ6dt0/edit?usp=sharing)
+
 ## Motivation
 
 * To help improve the security posture of open-sourced software in the industry :)
@@ -86,9 +88,19 @@ In a hackathon, the main tradeoff is between the code quality, the features and 
 └───mh-frontend
 ```
 
-We have used Vite + React. [Why?](https://vitejs.dev/guide/#overview)
+#### Frontend 
 
-The backend was written in Python, i.e. using the Flask framework and the frontend was written using React. Detailed instructions can be found in the individual directories on setting up the project. (For those who want to tinker around with the output of our backend system, we've included a sample output.json file in the root directory. Have fun :)
+- We have used Vite + React. [Why?](https://vitejs.dev/guide/#overview)
+
+#### Backend 
+
+- The backend was written in Python, i.e. using the Flask framework. 
+
+Detailed instructions can be found in the individual directories on setting up the project.
+
+- For those who want to tinker around with the output of our backend system, we've included a sample [output.json](/output.json) file in the root directory. 
+
+Have fun :)
 
 ## A high level layout of our system is shown below.
 
@@ -117,18 +129,50 @@ A win-win all around :)
 # Screens
 
 * Prompt the user to enter a GitHub or GitLab URL
-![image](https://github.com/SaketThota/ScanRE/assets/52862591/4cb86960-8401-4876-8545-c09f625387c2)
 
-* A few facts to keep the user engaged
-![image](https://github.com/SaketThota/ScanRE/assets/52862591/8ef7a0f4-3263-4607-adb6-3aab9dab06a5)
+![image](https://github.com/ScanRE/ScanRE/assets/61280281/a482fc25-3824-4e99-908d-36537fbb8484)
+
+* A few facts to keep the user engaged while the tool generates reports
+
+![image](https://github.com/ScanRE/ScanRE/assets/61280281/07df2c63-cc04-4bd3-9631-e75a8781c0c0)
 
 * Overview of scan results
-![image](https://github.com/SaketThota/ScanRE/assets/52862591/90742370-f753-4b8c-b510-dbacad987743)
 
-* List of findings
-![image](https://github.com/SaketThota/ScanRE/assets/52862591/2e1fe903-d39a-456b-bf8e-1130604c0d83)
+![overview](https://github.com/ScanRE/ScanRE/assets/61280281/712d3fab-9c9e-435f-9865-2406738fb33e)
+
+<br/>
+
+* List of Findings
+
+![findings](https://github.com/ScanRE/ScanRE/assets/61280281/72d17396-b22d-4b7b-83a6-67f1e4a1dd56)
+
+* Tracking Tool
+
+<br/>
+
+<table>
+    <tr>
+        <td>
+            <img src='https://github.com/ScanRE/ScanRE/assets/61280281/8663b32b-f2f4-4faf-90c1-6a990b95a7dc' alt='Findings Fixed'>
+        </td>
+        <td>
+            <img src='https://github.com/ScanRE/ScanRE/assets/61280281/e90c6441-aaab-4be0-990f-ba4e9a07cd8a' alt=''>
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <p>Check the boxes for which vulnerabilites have been fixed.</p>
+        </td>
+        <td>
+          <p>Vulnerability Fixed Percentage</p>
+        </td>
+    </tr>
+</table>
+
+<br/>
 
 * Results in an easy to understand format along with severity, likelihood, file path and line number in which the vulnerability was detected, the CWE details and suggested mitigation strategy as well as past scan findings and vulnerability tracking.
+
 ![image](https://github.com/SaketThota/ScanRE/assets/52862591/f54eb52b-0585-44dd-95f7-749f26e9deb8)
 
 # Performance metrics
@@ -146,7 +190,12 @@ These analyses are not necessarily ones that can be done quickly. Taint analysis
 Semgrep succeeds in that it only carries out single-file analysis, so the control flow graph never exceeds the size of a file. In addition, taint can be done incrementally. Functions have well-defined points where they begin and end, as well as generally well-defined entrances in terms of the data they accept (the function arguments). Thus, Semgrep collects taint summaries, which essentially (per function) encode the information about what taint may be possible, depending on the taint of the inputs that flow in.
 ![image](https://user-images.githubusercontent.com/52862591/234083232-4af327b3-5f37-4611-af16-237a73a128d6.png)
 
-## References:
+
+### Business Model 
+
+![pricing](https://github.com/ScanRE/ScanRE/assets/61280281/c06bd877-0e5e-4300-af1f-8bf07a5f90e8)
+
+## References
 
 * https://nullcon.net/goa-2022/hack-the-source
 * https://nullcon.net/goa-2022/unearthing-malicious-and-other-risky-open-source-packages-using-packj
@@ -156,6 +205,12 @@ Semgrep succeeds in that it only carries out single-file analysis, so the contro
 * https://www.forbes.com/sites/edwardsegal/2021/11/08/alert-fatigue-can-lead-to-missed-cyber-threats-and-staff-retentionrecruitment-issues-study/?sh=44ddb61535c9
 
 ## Team members
+
+<br/>
+<img src="https://github.com/ScanRE/ScanRE/assets/61280281/ac34b42b-7f1b-49c3-b156-70f3d7a95860" width=30% />
+
+<br/>
+<br/>
 
 * <a href="https://www.linkedin.com/in/jaden-furtado">Jaden Furtado</a>
 * <a href="https://www.linkedin.com/in/hardikraheja">Hardik Raheja</a>
